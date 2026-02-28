@@ -1,0 +1,84 @@
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 173 80% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 173 80% 40%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --border: 214.3 31.8% 91.4%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --primary: 173 80% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 217.2 32.6% 17.5%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --border: 217.2 32.6% 17.5%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Stitch page styles */
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Header: solid white at top, fades when scrolled */
+#stitch-nav {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#stitch-nav.stitch-nav-at-top {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+  border-radius: 0 0 1rem 1rem;
+  border-bottom: 1px solid rgb(229 231 235 / 0.8);
+}
+
+#stitch-nav.stitch-nav-scrolled {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.04), 0 2px 4px -2px rgb(0 0 0 / 0.03);
+  border-radius: 0 0 1rem 1rem;
+  border-bottom: 1px solid rgb(229 231 235 / 0.4);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #678dc6 0%, #4a6999 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-gradient {
+  background: radial-gradient(
+    circle at 50% -20%,
+    rgba(103, 141, 198, 0.15) 0%,
+    rgba(248, 249, 250, 0) 60%
+  );
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

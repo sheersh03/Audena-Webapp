@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audena Features Deep-Dive | Enterprise AI Voice Automation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3E5C76", // Glauco accent
+                        "background-light": "#F8F7F2", // Porcelain background
+                        "background-dark": "#121416",
+                        "accent-glauco": "#3E5C76",
+                        "porcelain": "#F8F7F2"
+                    },
+                    fontFamily: {
+                        display: ["Instrument Serif", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .feature-card:hover .feature-icon {
+            transform: translateY(-4px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(62, 92, 118, 0.08), transparent),
+                        radial-gradient(circle at bottom left, rgba(62, 92, 118, 0.05), transparent);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans antialiased">
+<nav class="sticky top-0 z-50 border-b border-slate-200/50 dark:border-slate-800/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-display italic font-semibold text-slate-900 dark:text-white" href="#">Audena</a>
+<div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Platform</a>
+<a class="text-primary font-semibold" href="#">Features</a>
+<a class="hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="hover:text-primary transition-colors" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-medium hover:text-primary transition-colors">Login</button>
+<button class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all shadow-sm">Get a Demo</button>
+</div>
+</div>
+</nav>
+<header class="relative pt-20 pb-12 overflow-hidden hero-gradient">
+<div class="max-w-7xl mx-auto px-6">
+<div class="max-w-3xl">
+<span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6">Deep Dive</span>
+<h1 class="text-6xl md:text-7xl font-display leading-[1.1] mb-8 text-slate-900 dark:text-white">
+                    Experience AI that <br/><span class="italic text-primary">thinks &amp; speaks</span> like a human.
+                </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10">
+                    Go beyond simple chatbots. Audena’s enterprise voice engine handles complex customer interactions with perfect tone, zero latency, and 100+ language support.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                        Talk to an Agent <span class="material-icons-round text-sm">arrow_forward</span>
+</button>
+<button class="border border-slate-300 dark:border-slate-700 px-8 py-4 rounded-full font-semibold hover:bg-white dark:hover:bg-slate-800 transition-all">
+                        Watch the Walkthrough
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<section class="py-24 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white mb-6 feature-icon transition-transform">
+<span class="material-icons-round">record_voice_over</span>
+</div>
+<h2 class="text-4xl font-display mb-6 text-slate-900 dark:text-white">Human-like AI Voices</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        Our proprietary synthesis engine captures the nuance of human speech—the breaths, the pauses, and the emotional inflection that builds trust.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-primary mt-1">check_circle</span>
+<div>
+<span class="font-semibold block text-slate-900 dark:text-white">Emotional Intelligence</span>
+<p class="text-sm text-slate-500">Detects caller sentiment and adjusts tone from empathetic to authoritative in real-time.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-round text-primary mt-1">check_circle</span>
+<div>
+<span class="font-semibold block text-slate-900 dark:text-white">Zero Latency Response</span>
+<p class="text-sm text-slate-500">Industry-leading &lt; 200ms response time ensures conversations flow naturally without awkward silences.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-red-400"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+<div class="w-3 h-3 rounded-full bg-green-400"></div>
+</div>
+<span class="text-xs font-mono text-slate-400 uppercase tracking-widest">Voice Synthesis Studio</span>
+</div>
+<div class="p-8">
+<div class="mb-8">
+<label class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-4">Voice Persona Selection</label>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-xl border-2 border-primary bg-primary/5 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-icons-round text-primary">face</span>
+</div>
+<div>
+<div class="text-sm font-bold">Clara</div>
+<div class="text-[10px] text-slate-500">Warm &amp; Helpful</div>
+</div>
+<span class="material-icons-round text-primary ml-auto text-sm">volume_up</span>
+</div>
+<div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-3 grayscale opacity-60">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+<span class="material-icons-round">face_6</span>
+</div>
+<div>
+<div class="text-sm font-bold">Marcus</div>
+<div class="text-[10px] text-slate-500">Direct &amp; Professional</div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-xs font-bold mb-3">
+<span>PITCH VARIANCE</span>
+<span class="text-primary">78%</span>
+</div>
+<div class="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[78%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-bold mb-3">
+<span>EMPATHY BIAS</span>
+<span class="text-primary">92%</span>
+</div>
+<div class="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative group">
+<div class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-icons-round text-primary">translate</span>
+<span class="text-xs font-bold uppercase tracking-widest text-slate-500">Global Routing Engine</span>
+</div>
+</div>
+<div class="p-8">
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-background-light dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold">ES</div>
+<span class="text-sm font-semibold">Spanish (Mexico)</span>
+</div>
+<span class="px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold">ACTIVE</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-background-light dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold">FR</div>
+<span class="text-sm font-semibold">French (Quebec)</span>
+</div>
+<span class="px-2 py-1 rounded-md bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold">ACTIVE</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-background-light dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold">DE</div>
+<span class="text-sm font-semibold">German</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="h-1 w-12 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<span class="text-[10px] text-slate-400 font-bold">SYNCING</span>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full py-3 rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-slate-500 text-sm font-semibold hover:border-primary hover:text-primary transition-colors">
+                                        + Add 100+ More Languages
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white mb-6 feature-icon transition-transform">
+<span class="material-icons-round">language</span>
+</div>
+<h2 class="text-4xl font-display mb-6 text-slate-900 dark:text-white">Multi-language Support</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        Deploy your support globally with native fluency in 100+ languages and dialects. Audena doesn't just translate; it understands cultural context.
+                    </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<span class="text-3xl font-display text-primary block mb-2">100+</span>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Supported Dialects</span>
+</div>
+<div>
+<span class="text-3xl font-display text-primary block mb-2">99.8%</span>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Nuance Accuracy</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white mb-6 feature-icon transition-transform">
+<span class="material-icons-round">insights</span>
+</div>
+<h2 class="text-4xl font-display mb-6 text-slate-900 dark:text-white">Real-time Analytics</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                        Monitor performance at a glance. Get deep insights into call resolution rates, customer sentiment trends, and common friction points.
+                    </p>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-icons-round text-primary">trending_up</span>
+</div>
+<div>
+<span class="font-semibold block text-slate-900 dark:text-white">Conversion Tracking</span>
+<p class="text-sm text-slate-500">Track how many voice interactions lead to successful appointments or sales.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-icons-round text-primary">psychology</span>
+</div>
+<div>
+<span class="font-semibold block text-slate-900 dark:text-white">Sentiment Heatmaps</span>
+<p class="text-sm text-slate-500">Visualize where customers get frustrated and automatically optimize scripts.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden p-8">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h4 class="text-lg font-bold">Call Performance</h4>
+<p class="text-xs text-slate-400">Last 24 Hours</p>
+</div>
+<select class="text-xs font-bold bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-3 pr-8 focus:ring-primary">
+<option>Weekly View</option>
+<option>Daily View</option>
+</select>
+</div>
+<div class="grid grid-cols-3 gap-4 mb-8">
+<div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+<span class="text-[10px] font-bold text-primary block mb-1">TOTAL CALLS</span>
+<span class="text-2xl font-display font-bold">12.4k</span>
+</div>
+<div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<span class="text-[10px] font-bold text-slate-500 block mb-1">SUCCESS</span>
+<span class="text-2xl font-display font-bold">94.2%</span>
+</div>
+<div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+<span class="text-[10px] font-bold text-slate-500 block mb-1">LATENCY</span>
+<span class="text-2xl font-display font-bold">185ms</span>
+</div>
+</div>
+<div class="h-40 flex items-end gap-2 mb-4">
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[60%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[45%]"></div>
+<div class="flex-1 bg-primary rounded-t-lg h-[90%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[75%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[55%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[80%]"></div>
+<div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[70%]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-bold text-slate-400">
+<span>08:00 AM</span>
+<span>12:00 PM</span>
+<span>04:00 PM</span>
+<span>08:00 PM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="py-12 border-y border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<p class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-8">Powering voice for the world's most innovative companies</p>
+<div class="flex flex-wrap justify-center gap-12 md:gap-20 opacity-40 grayscale contrast-125 dark:invert">
+<div class="text-2xl font-bold">POSTMAN</div>
+<div class="text-2xl font-bold italic">Ramp</div>
+<div class="text-2xl font-bold">DOORDASH</div>
+<div class="text-2xl font-bold italic">capital.com</div>
+<div class="text-2xl font-bold">altiex</div>
+</div>
+</div>
+</div>
+<section class="py-24">
+<div class="max-w-5xl mx-auto px-6">
+<div class="bg-primary rounded-[2.5rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+<h2 class="text-4xl md:text-5xl font-display mb-6 relative z-10">Ready to build the future <br/>of voice support?</h2>
+<p class="text-primary-foreground/80 text-lg mb-10 max-w-2xl mx-auto opacity-90 relative z-10">
+                    Join hundreds of enterprises that are scaling their customer operations with Audena. Start your pilot program today.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-white text-primary px-10 py-4 rounded-full font-bold hover:shadow-xl hover:scale-105 transition-all">
+                        Get Started for Free
+                    </button>
+<button class="bg-primary/20 backdrop-blur-sm border border-white/20 px-10 py-4 rounded-full font-bold hover:bg-primary/30 transition-all">
+                        Book a Live Demo
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white dark:bg-slate-900 pt-20 pb-10 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+<div class="col-span-2">
+<a class="text-2xl font-display italic font-semibold text-slate-900 dark:text-white mb-6 block" href="#">Audena</a>
+<p class="text-slate-500 max-w-xs mb-8">
+                        The world's most advanced AI voice engine for global enterprise customer service.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">Product</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Agent Canvas</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Voices</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Insights</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API Docs</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">Company</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-sm font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-6">Security</h5>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">SOC2 Compliance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Security Overview</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-10 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-400">© 2024 Audena AI, Inc. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-[10px] font-bold text-slate-400">SYSTEM STATUS: OPERATIONAL</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
