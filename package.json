@@ -1,0 +1,11 @@
+{
+  "name": "audena-webapp-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix Audena-Webapp",
+    "build": "npm run build --prefix Audena-Webapp",
+    "start": "npm run start --prefix Audena-Webapp",
+    "lint": "npm run lint --prefix Audena-Webapp",
+    "install:app": "npm install --prefix Audena-Webapp"
+  }
+}
