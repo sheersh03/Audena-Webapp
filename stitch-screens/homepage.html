@@ -133,6 +133,70 @@
             0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.35; }
             50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.25; }
         }
+        /* Futuristic AI/CRM feature blob - bottom-left highlight */
+        .blob-feature {
+            position: absolute;
+            bottom: -8%;
+            left: -5%;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.6;
+            will-change: transform;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.5) 0%, rgba(59, 130, 246, 0.35) 50%, rgba(236, 72, 153, 0.25) 100%);
+            animation: blob-feature-morph 12s ease-in-out infinite;
+        }
+        .blob-feature::before {
+            content: '';
+            position: absolute;
+            inset: -20%;
+            border-radius: 50%;
+            background: linear-gradient(225deg, rgba(103, 141, 198, 0.2) 0%, transparent 50%);
+            animation: blob-feature-glow 8s ease-in-out infinite alternate;
+        }
+        .blob-feature-icon {
+            position: absolute;
+            bottom: 12%;
+            left: 8%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: 20px;
+            z-index: 1;
+            animation: blob-icon-float 6s ease-in-out infinite;
+        }
+        .blob-feature-icon .material-symbols-outlined {
+            font-size: 40px;
+            color: rgba(139, 92, 246, 0.9);
+        }
+        .dark .blob-feature-icon {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.15) 100%);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .dark .blob-feature-icon .material-symbols-outlined {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        @keyframes blob-feature-morph {
+            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            25% { transform: translate(15px, -25px) scale(1.08) rotate(2deg); }
+            50% { transform: translate(-20px, 10px) scale(0.95) rotate(-1deg); }
+            75% { transform: translate(25px, 15px) scale(1.05) rotate(1deg); }
+        }
+        @keyframes blob-feature-glow {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 0.6; transform: scale(1.1); }
+        }
+        @keyframes blob-icon-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
         /* Subtle grid overlay for AI/tech feel */
         .hero-grid {
             position: absolute;
@@ -177,6 +241,10 @@
 <div class="blob blob-3"></div>
 <div class="blob blob-4"></div>
 <div class="blob blob-5"></div>
+<div class="blob-feature"></div>
+<div class="blob-feature-icon" aria-hidden="true">
+<span class="material-symbols-outlined">psychology</span>
+</div>
 </div>
 <div class="hero-grid"></div>
 <div class="max-w-5xl mx-auto text-center relative z-10">
