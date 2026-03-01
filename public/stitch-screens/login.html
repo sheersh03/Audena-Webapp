@@ -44,28 +44,21 @@
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col transition-colors duration-300">
-<div class="fixed top-6 right-6">
-<button class="p-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all shadow-sm" onclick="toggleTheme()">
-<span class="material-icons-round text-[20px]" id="theme-icon">dark_mode</span>
-</button>
-</div>
 <main class="flex-grow flex flex-col items-center justify-center p-6 sm:p-12">
 <div class="mb-10 flex flex-col items-center">
-<div class="flex items-center gap-2 mb-2">
-<div class="w-10 h-10 bg-black dark:bg-white rounded-xl flex items-center justify-center">
-<span class="material-icons-round text-white dark:text-black text-[24px]">graphic_eq</span>
-</div>
-<h1 class="text-3xl font-semibold tracking-tight display-font text-gray-900 dark:text-white">Audena</h1>
-</div>
+<a href="/" class="flex items-center gap-2 mb-2 group">
+<img src="/logo/audena-logo-light-bg.png" alt="Audena" class="h-10 w-auto object-contain dark:hidden"/>
+<img src="/logo/audena-logo-dark-bg.png" alt="Audena" class="h-10 w-auto object-contain hidden dark:block"/>
+</a>
 <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">Enterprise AI Voice Platform</p>
 </div>
-<div class="w-full max-w-[440px] bg-surface-light dark:bg-surface-dark p-8 sm:p-10 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)]">
+<div class="w-full max-w-[440px] bg-white dark:bg-surface-dark p-8 sm:p-10 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
 <div class="text-center mb-8">
-<h2 class="text-2xl font-medium text-gray-900 dark:text-white mb-2">Welcome back</h2>
-<p class="text-sm text-gray-500 dark:text-gray-400">Please enter your details to sign in.</p>
+<h2 class="text-2xl font-medium text-gray-400 dark:text-gray-500 mb-2 font-display-outfit">Welcome back</h2>
+<p class="text-sm text-gray-700 dark:text-gray-300">Please enter your details to sign in.</p>
 </div>
 <div class="space-y-3 mb-8">
-<button class="w-full flex items-center justify-center gap-3 px-4 py-2.5 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<button class="w-full flex items-center justify-center gap-3 px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors" type="button">
 <svg class="w-5 h-5" viewBox="0 0 24 24">
 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
@@ -74,7 +67,7 @@
 </svg>
                     Continue with Google
                 </button>
-<button class="w-full flex items-center justify-center gap-3 px-4 py-2.5 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<button class="w-full flex items-center justify-center gap-3 px-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors" type="button">
 <svg class="w-5 h-5" viewBox="0 0 23 23">
 <path d="M0 0h23v23H0z" fill="#f3f3f3"></path>
 <path d="M1 1h10v10H1z" fill="#f35325"></path>
@@ -90,64 +83,46 @@
 <div class="w-full border-t border-gray-200 dark:border-gray-800"></div>
 </div>
 <div class="relative flex justify-center text-sm uppercase">
-<span class="px-2 bg-surface-light dark:bg-surface-dark text-gray-400">or use email</span>
+<span class="px-2 bg-white dark:bg-surface-dark text-gray-400 text-xs uppercase tracking-wide">or use email</span>
 </div>
 </div>
-<form action="#" class="space-y-5">
+<form action="/login" method="post" class="space-y-5" id="login-form">
 <div>
 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5" for="email">Email address</label>
-<input class="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-primary focus:border-primary block sm:text-sm transition-all" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+<input class="w-full px-4 py-2.5 bg-gray-600 dark:bg-gray-700 border-0 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 block sm:text-sm transition-all" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
 </div>
 <div>
 <div class="flex items-center justify-between mb-1.5">
 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="password">Password</label>
-<a class="text-xs font-medium text-primary hover:underline" href="#">Forgot password?</a>
+<a class="text-xs font-medium text-blue-500 hover:underline" href="/forgot-password">Forgot password?</a>
 </div>
 <div class="relative">
-<input class="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-primary focus:border-primary block sm:text-sm transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" type="button">
+<input class="w-full px-4 py-2.5 bg-gray-600 dark:bg-gray-700 border-0 rounded-lg text-white placeholder-gray-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 block sm:text-sm transition-all pr-10" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-300 hover:text-white" type="button" id="password-toggle" aria-label="Toggle password visibility">
 <span class="material-icons-round text-lg">visibility_off</span>
 </button>
 </div>
 </div>
 <div class="flex items-center">
-<input class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-800" id="remember-me" name="remember-me" type="checkbox"/>
+<input class="h-4 w-4 text-blue-500 focus:ring-blue-500 border-gray-300 rounded bg-white" id="remember-me" name="remember-me" type="checkbox"/>
 <label class="ml-2 block text-sm text-gray-600 dark:text-gray-400" for="remember-me">
                         Stay signed in for 30 days
                     </label>
 </div>
-<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-primary hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 transform active:scale-[0.98]" type="submit">
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg text-sm font-semibold text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200" type="submit">
                     Sign In
                 </button>
 </form>
 <p class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
                 Don't have an account? 
-                <a class="font-semibold text-primary hover:underline" href="#">Request access</a>
+                <a class="font-semibold text-blue-500 hover:underline" href="/book-demo">Request access</a>
 </p>
 </div>
 <div class="mt-12 flex gap-6 text-xs text-gray-400 dark:text-gray-600 font-medium uppercase tracking-wider">
-<a class="hover:text-gray-600 dark:hover:text-gray-400 transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-gray-600 dark:hover:text-gray-400 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-gray-600 dark:hover:text-gray-400 transition-colors" href="/about">Privacy Policy</a>
+<a class="hover:text-gray-600 dark:hover:text-gray-400 transition-colors" href="/about">Terms of Service</a>
 <a class="hover:text-gray-600 dark:hover:text-gray-400 transition-colors" href="#">System Status</a>
 </div>
 </main>
-<script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            const icon = document.getElementById('theme-icon');
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                icon.innerText = 'dark_mode';
-            } else {
-                html.classList.add('dark');
-                icon.innerText = 'light_mode';
-            }
-        }
-        // Check for preferred color scheme
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-            document.getElementById('theme-icon').innerText = 'light_mode';
-        }
-    </script>
 
 </body></html>

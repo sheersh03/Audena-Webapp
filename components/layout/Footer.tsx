@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/config/site";
 
@@ -8,8 +9,14 @@ export function Footer() {
       <Container>
         <div className="flex flex-col gap-12 py-12 md:flex-row md:justify-between">
           <div>
-            <Link href="/" className="text-xl font-bold">
-              {siteConfig.name}
+            <Link href="/" className="inline-flex items-center">
+              <Image
+                src={siteConfig.logo.lightBg}
+                alt={siteConfig.name}
+                width={120}
+                height={32}
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <p className="mt-2 text-sm text-muted">
               © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.

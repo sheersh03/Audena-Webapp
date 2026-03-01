@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export function AppFooter() {
@@ -11,14 +12,13 @@ export function AppFooter() {
               href="/"
               className="flex items-center gap-2 mb-8 group"
             >
-              <span className="w-8 h-8 bg-[#678DC6] rounded-lg flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-xl">
-                  settings_voice
-                </span>
-              </span>
-              <span className="font-display font-bold text-xl tracking-tight text-white">
-                {siteConfig.name}
-              </span>
+              <Image
+                src={siteConfig.logo.darkBg}
+                alt={siteConfig.name}
+                width={140}
+                height={32}
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <p className="max-w-xs mb-8">
               Revolutionizing human-machine interaction through high-fidelity

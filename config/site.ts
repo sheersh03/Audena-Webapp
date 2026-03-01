@@ -1,6 +1,13 @@
 export const siteConfig = {
   name: "Audena",
   description: "Automated AI voice calls that sound human.",
+  /** Logo paths (in /public). Use light-bg on light backgrounds, dark-bg on dark. */
+  logo: {
+    lightBg: "/logo/audena-logo-light-bg.png",
+    darkBg: "/logo/audena-logo-dark-bg.png",
+    iconLightBg: "/logo/audena-icon-light-bg.png",
+    iconDarkBg: "/logo/audena-icon-dark-bg.png",
+  },
   navItems: [
     { label: "Platform", href: "/#features" },
     { label: "Features", href: "/features" },

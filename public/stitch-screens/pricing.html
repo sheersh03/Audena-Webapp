@@ -6,7 +6,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 <script>
         tailwind.config = {
@@ -17,22 +17,10 @@
                         primary: "#678DC6", // Glauco
                         "background-light": "#F8F9FA", // Porcelain
                         "background-dark": "#121212", // Graphite dark
-                        "graphite": {
-                            50: "#f6f6f6",
-                            100: "#e7e7e7",
-                            200: "#d1d1d1",
-                            300: "#b0b0b0",
-                            400: "#888888",
-                            500: "#6d6d6d",
-                            600: "#5d5d5d",
-                            700: "#4f4f4f",
-                            800: "#454545",
-                            900: "#3d3d3d",
-                            950: "#121212",
-                        }
+                        graphite: "#323432",
                     },
                     fontFamily: {
-                        display: ["Playfair Display", "serif"],
+                        display: ["Plus Jakarta Sans", "sans-serif"],
                         sans: ["Inter", "sans-serif"],
                     },
                     borderRadius: {
@@ -59,25 +47,23 @@
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
-<nav class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
-<div class="flex items-center gap-2">
-<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-white">voice_chat</span>
+<nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-gray-200/50 dark:border-white/10 bg-white/70 dark:bg-black/70 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-2 group" href="/">
+<img src="/logo/audena-logo-light-bg.png" alt="Audena" class="h-8 w-auto object-contain dark:hidden"/>
+<img src="/logo/audena-logo-dark-bg.png" alt="Audena" class="h-8 w-auto object-contain hidden dark:block"/>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/#features">Platform</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/features">Features</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="/#how-it-works">Methodology</a>
+<a class="text-sm font-medium text-primary font-semibold" href="/pricing">Pricing</a>
 </div>
-<span class="text-xl font-bold tracking-tight">Audena</span>
-</div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Product</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Solutions</a>
-<a class="text-sm font-medium text-primary" href="#">Pricing</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Resources</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="text-sm font-medium px-4 py-2 hover:opacity-80 transition-opacity">Sign in</button>
-<button class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium px-5 py-2.5 rounded-full hover:shadow-lg transition-all">Talk to us</button>
-</div>
+<a class="hidden sm:block text-sm font-semibold px-4 py-2 hover:opacity-70 transition-opacity" href="/login">Sign in</a>
+<a class="bg-graphite dark:bg-white text-white dark:text-graphite px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all" href="/book-demo">Book a Demo</a>
 </div>
 </div>
 </nav>
@@ -290,10 +276,8 @@
 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
 <div class="col-span-2">
 <div class="flex items-center gap-2 mb-6">
-<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-sm">voice_chat</span>
-</div>
-<span class="text-xl font-bold tracking-tight">Audena</span>
+<img src="/logo/audena-logo-light-bg.png" alt="Audena" class="h-8 w-auto object-contain dark:hidden"/>
+<img src="/logo/audena-logo-dark-bg.png" alt="Audena" class="h-8 w-auto object-contain hidden dark:block"/>
 </div>
 <p class="text-slate-500 dark:text-slate-400 max-w-xs mb-8">
                         The world's most advanced AI voice platform for enterprise customer support and engagement.

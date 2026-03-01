@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { siteConfig } from "@/config/site";
 
@@ -30,14 +31,22 @@ export function Header() {
             href="/"
             className="flex items-center gap-2 group"
           >
-            <span className="w-8 h-8 bg-[#678DC6] rounded-lg flex items-center justify-center">
-              <span className="material-symbols-outlined text-white text-xl">
-                settings_voice
-              </span>
-            </span>
-            <span className="font-display font-bold text-xl tracking-tight">
-              {siteConfig.name}
-            </span>
+            <Image
+              src={siteConfig.logo.lightBg}
+              alt={siteConfig.name}
+              width={140}
+              height={32}
+              className="h-8 w-auto object-contain dark:hidden"
+              priority
+            />
+            <Image
+              src={siteConfig.logo.darkBg}
+              alt={siteConfig.name}
+              width={140}
+              height={32}
+              className="h-8 w-auto object-contain hidden dark:block"
+              priority
+            />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             {siteConfig.navItems.map((item) => (

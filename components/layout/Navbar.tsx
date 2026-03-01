@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -14,8 +15,15 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <Container>
         <nav className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
-            {siteConfig.name}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src={siteConfig.logo.lightBg}
+              alt={siteConfig.name}
+              width={120}
+              height={32}
+              className="h-8 w-auto object-contain"
+              priority
+            />
           </Link>
 
           <div className="hidden md:flex md:items-center md:gap-8">
