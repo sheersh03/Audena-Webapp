@@ -13,7 +13,7 @@ export function AppFooter() {
               className="flex items-center gap-2 mb-8 group"
             >
               <Image
-                src={siteConfig.logo.darkBg}
+                src="/logo/audena-logo-light.png"
                 alt={siteConfig.name}
                 width={140}
                 height={32}
