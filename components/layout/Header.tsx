@@ -3,17 +3,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 
 export function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
       id="stitch-nav"
-      className="fixed top-0 left-0 right-0 z-50 rounded-b-[1.75rem] border-b border-slate-200/80 bg-white/95 shadow-[0_2px_12px_rgba(15,23,42,0.06)] backdrop-blur-md transition-all duration-300"
+      className={`glass-nav fixed top-0 left-0 right-0 z-50 rounded-b-[1.75rem] border-b transition-all duration-300 ${
+        scrolled
+          ? "border-slate-200/50 bg-white/70 shadow-[0_4px_20px_rgba(15,23,42,0.08)]"
+          : "border-slate-200/80 bg-white/95 shadow-[0_2px_12px_rgba(15,23,42,0.06)]"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-10">
