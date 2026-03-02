@@ -14,7 +14,32 @@ const trustSignals = [
   { label: "Deployments", value: "500+" },
 ];
 
-const complianceBadges = ["SOC 2 Type II", "GDPR", "HIPAA", "ISO 27001"];
+const complianceBadges = [
+  {
+    name: "SOC 2 Type II",
+    detail: "Verified",
+    icon: "verified_user",
+    tone: "bg-emerald-50 text-emerald-700",
+  },
+  {
+    name: "GDPR",
+    detail: "Certified",
+    icon: "privacy_tip",
+    tone: "bg-sky-50 text-sky-700",
+  },
+  {
+    name: "HIPAA",
+    detail: "Healthcare",
+    icon: "health_and_safety",
+    tone: "bg-violet-50 text-violet-700",
+  },
+  {
+    name: "ISO 27001",
+    detail: "Standard",
+    icon: "workspace_premium",
+    tone: "bg-amber-50 text-amber-700",
+  },
+];
 
 function CheckIcon() {
   return (
@@ -192,20 +217,20 @@ export default function BookDemoPage() {
 
                 <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
                   <p className="text-lg leading-8 text-slate-600">
-                    “Audena improved our customer satisfaction scores by 40%
-                    in the first quarter alone. It&apos;s the most reliable
-                    voice AI we&apos;ve tested.”
+                    “We built Audena to give enterprises a voice platform that
+                    feels human, operates reliably at scale, and earns trust in
+                    every conversation.”
                   </p>
                   <div className="mt-6 flex items-center gap-4">
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-lg font-bold text-primary">
-                      MC
+                      DM
                     </div>
                     <div>
                       <p className="font-semibold text-graphite">
-                        Marcus Chen
+                        Donato Matteucci
                       </p>
                       <p className="text-sm text-slate-500">
-                        VP of Customer Experience, Global Logistics
+                        CEO, Audena
                       </p>
                     </div>
                   </div>
@@ -215,13 +240,29 @@ export default function BookDemoPage() {
                   <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
                     Trusted security and compliance
                   </p>
-                  <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                  <div className="mt-5 grid gap-4 sm:grid-cols-2">
                     {complianceBadges.map((badge) => (
                       <div
-                        key={badge}
-                        className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5 text-center text-xs font-semibold uppercase tracking-[0.18em] text-slate-600"
+                        key={badge.name}
+                        className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white hover:shadow-lg"
                       >
-                        {badge}
+                        <div className="flex items-start gap-4">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                            <span className="material-symbols-outlined text-xl">
+                              {badge.icon}
+                            </span>
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-700">
+                              {badge.name}
+                            </p>
+                            <span
+                              className={`mt-3 inline-flex rounded-full px-3 py-1 text-xs font-semibold ${badge.tone}`}
+                            >
+                              {badge.detail}
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
