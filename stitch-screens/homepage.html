@@ -160,6 +160,23 @@
                 opacity: 0.82;
             }
         }
+        @media (max-width: 640px) {
+            .hero-orb-panel {
+                min-height: 16rem;
+                margin-bottom: 0.25rem;
+            }
+            .hero-orb-glow {
+                width: 15rem;
+                height: 15rem;
+                filter: blur(28px);
+                opacity: 0.62;
+            }
+            .hero-orb-shell {
+                width: 14rem;
+                height: 14rem;
+                opacity: 0.78;
+            }
+        }
     </style>
 </head>
 <body class="font-body bg-background-light dark:bg-background-dark text-graphite dark:text-gray-100 antialiased overflow-x-hidden">
@@ -177,16 +194,16 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="/pricing">Pricing</a>
 </div>
 </div>
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-3 sm:gap-4">
 <a class="hidden sm:block text-sm font-semibold px-4 py-2 hover:opacity-70 transition-opacity" href="/login">Sign in</a>
-<a class="bg-graphite dark:bg-white text-white dark:text-graphite px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all" href="/book-demo">Book a Demo</a>
+<a class="bg-graphite dark:bg-white text-white dark:text-graphite px-4 sm:px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all" href="/book-demo">Book a Demo</a>
 </div>
 </div>
 </nav>
-<main class="pt-20">
-<section class="relative flex min-h-[calc(100vh-5rem)] items-center px-6 hero-gradient overflow-hidden pb-10 pt-10">
+<main class="pt-16">
+<section class="relative flex min-h-[calc(100vh-4rem)] items-center px-4 sm:px-6 hero-gradient overflow-hidden pb-8 pt-6 sm:pb-10 sm:pt-10">
 <div class="hero-grid"></div>
-<div class="hero-layout max-w-7xl mx-auto grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+<div class="hero-layout max-w-7xl mx-auto grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
 <div class="hero-copy order-2 lg:order-1">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in">
 <span class="relative flex h-2 w-2">
@@ -195,10 +212,10 @@
 </span>
                     Introducing Agent v2.4
                 </div>
-<h1 class="font-display text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
+<h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 sm:mb-8 leading-[1.05] sm:leading-[1.1]">
                     Automated AI Voice Calls <br/> That Sound <span class="text-primary italic font-serif font-normal">Human.</span>
 </h1>
-<p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed">
+<p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-10 sm:mb-12 leading-relaxed">
                     Audena powers human-like voice conversations at scale. Reach thousands of customers simultaneously without sacrificing the personal touch.
                 </p>
 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -265,7 +282,7 @@
 </div>
 </div>
 </section>
-<section class="px-6 pb-10 pt-4" id="hero-preview">
+<section class="px-4 sm:px-6 pb-10 pt-4" id="hero-preview">
 <div class="relative max-w-6xl mx-auto">
 <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-[2rem] blur-2xl opacity-50 -z-10"></div>
 <div class="backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 rounded-2xl border border-gray-200/80 dark:border-white/10 shadow-2xl overflow-hidden">
@@ -280,7 +297,7 @@
 </div>
 <div class="w-12"></div>
 </div>
-<div class="p-6 bg-white dark:bg-gray-900">
+<div class="p-4 sm:p-6 bg-white dark:bg-gray-900">
 <div class="flex items-center justify-between mb-6">
 <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white">Audena</h3>
 <div class="flex items-center gap-3 text-xs text-gray-500">
@@ -289,7 +306,7 @@
 <span class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-400">i</span>
 </div>
 </div>
-<div class="grid md:grid-cols-2 gap-8 mb-8">
+<div class="grid gap-6 md:grid-cols-2 md:gap-8 mb-8">
 <div class="space-y-3">
 <div class="flex justify-between text-sm">
 <span class="text-gray-600 dark:text-gray-400">Active Calls</span>
@@ -363,7 +380,7 @@
 </div>
 </div>
 </section>
-<section class="py-24 px-6 border-b border-gray-200 dark:border-white/10">
+<section class="py-20 sm:py-24 px-4 sm:px-6 border-b border-gray-200 dark:border-white/10">
 <div class="max-w-7xl mx-auto">
 <p class="text-center text-sm font-semibold text-gray-400 uppercase tracking-[0.2em] mb-12">Trusted by fast-growing enterprises</p>
 <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all">
@@ -375,11 +392,11 @@
 </div>
 </div>
 </section>
-<section class="py-32 px-6" id="features">
+<section class="py-20 sm:py-32 px-4 sm:px-6" id="features">
 <div class="max-w-7xl mx-auto">
-<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 <div>
-<h2 class="text-4xl md:text-5xl font-display font-bold leading-tight mb-8">Built for high-performance Revenue &amp; Support Teams</h2>
+<h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold leading-tight mb-6 sm:mb-8">Built for high-performance Revenue &amp; Support Teams</h2>
 <p class="text-lg text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
                             Stop wasting human cycles on repetitive qualification calls and tier-1 support. Audena handles the volume so your team can focus on complex closings.
                         </p>
@@ -420,13 +437,13 @@
 </div>
 </div>
 </section>
-<section class="py-32 px-6 bg-gray-50 dark:bg-white/[0.02]" id="how-it-works">
+<section class="py-20 sm:py-32 px-4 sm:px-6 bg-gray-50 dark:bg-white/[0.02]" id="how-it-works">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-20">
 <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">How It Works</h2>
 <p class="text-gray-600 dark:text-gray-400">From onboarding to automation in less than 24 hours.</p>
 </div>
-<div class="grid md:grid-cols-3 gap-12">
+<div class="grid md:grid-cols-3 gap-10 md:gap-12">
 <div class="relative">
 <div class="text-[8rem] font-display font-black text-gray-200 dark:text-white/5 absolute -top-20 -left-4 z-0">1</div>
 <div class="relative z-10 pt-8">
@@ -451,15 +468,15 @@
 </div>
 </div>
 </section>
-<section class="py-32 px-6">
-<div class="max-w-7xl mx-auto bg-graphite rounded-[3rem] p-12 md:p-24 text-white relative overflow-hidden">
+<section class="py-20 sm:py-32 px-4 sm:px-6">
+<div class="max-w-7xl mx-auto bg-graphite rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-12 md:p-24 text-white relative overflow-hidden">
 <div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
 <div class="absolute inset-0 bg-gradient-to-l from-primary to-transparent"></div>
 <img alt="Technical Pattern" class="w-full h-full object-cover mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBju5aVhUuZQ1rG7rDHOiCgGVrNa6FIPN58LMDzmKQprNf3hA7AKTu1sBpS8gnJrJ3CCZ7pNfZV2niJuOKGSBP9m7QNLWJL2B25w1_hGPg0OXukbYe0aQ1S7-66JgKH38mEU8fTZCM49aapftJo88cmH2Rg-zqjaAckZgRcTmV7LbwMLmUhkC3LJB-ol7BlSo2KdHicSVRP8QWQwMllFJC-j461ljAAIodZWK8c8kmjkrVj4iFWJ6HsN20_Da-2dswXoIUrGah2O_w"/>
 </div>
 <div class="relative z-10 max-w-2xl">
 <span class="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Safety &amp; Compliance</span>
-<h2 class="text-4xl md:text-6xl font-display font-bold mb-8 leading-tight">Secure by design. Compliant by default.</h2>
+<h2 class="text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-6 sm:mb-8 leading-tight">Secure by design. Compliant by default.</h2>
 <p class="text-gray-300 text-lg mb-10 leading-relaxed">
                         We maintain the highest security standards including SOC2 Type II, HIPAA, and GDPR compliance to protect your enterprise data.
                     </p>
@@ -480,13 +497,13 @@
 </div>
 </div>
 </section>
-<section class="py-32 px-6 text-center">
+<section class="py-20 sm:py-32 px-4 sm:px-6 text-center">
 <div class="max-w-4xl mx-auto">
-<h2 class="text-4xl md:text-6xl font-display font-bold mb-8">Ready to evolve your <br/> voice operations?</h2>
-<p class="text-xl text-gray-600 dark:text-gray-400 mb-12">Join 400+ enterprises scaling their communication with Audena.</p>
+<h2 class="text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-6 sm:mb-8">Ready to evolve your <br/> voice operations?</h2>
+<p class="text-base sm:text-xl text-gray-600 dark:text-gray-400 mb-10 sm:mb-12">Join 400+ enterprises scaling their communication with Audena.</p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-<a class="w-full sm:w-auto px-10 py-5 bg-primary text-white font-bold rounded-2xl shadow-xl shadow-primary/30 hover:scale-105 transition-all text-lg inline-block text-center" href="/book-demo">Start Building Today</a>
-<a class="w-full sm:w-auto px-10 py-5 border-2 border-gray-200 dark:border-white/10 font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all text-lg inline-block text-center" href="/book-demo">Contact Sales</a>
+<a class="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-primary text-white font-bold rounded-2xl shadow-xl shadow-primary/30 hover:scale-105 transition-all text-base sm:text-lg inline-block text-center" href="/book-demo">Start Building Today</a>
+<a class="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 border-2 border-gray-200 dark:border-white/10 font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-white/5 transition-all text-base sm:text-lg inline-block text-center" href="/book-demo">Contact Sales</a>
 </div>
 </div>
 </section>
