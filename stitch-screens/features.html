@@ -40,6 +40,19 @@
             background: radial-gradient(circle at top right, rgba(62, 92, 118, 0.08), transparent),
                         radial-gradient(circle at bottom left, rgba(62, 92, 118, 0.05), transparent);
         }
+        .feature-hero-title {
+            color: #323432;
+            text-wrap: balance;
+        }
+        .feature-hero-title .feature-hero-accent {
+            color: #678DC6;
+        }
+        .feature-body-copy {
+            color: #7F8FA8;
+        }
+        .feature-label {
+            color: #52637D;
+        }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-sans antialiased">
@@ -66,18 +79,18 @@
 <header class="relative pt-20 pb-12 overflow-hidden hero-gradient">
 <div class="max-w-7xl mx-auto px-6">
 <div class="max-w-3xl">
-<span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6">Deep Dive</span>
-<h1 class="text-6xl md:text-7xl font-display leading-[1.1] mb-8 text-slate-900 dark:text-white">
-                    Experience AI that <br/><span class="italic text-primary">thinks &amp; speaks</span> like a human.
+<span class="inline-block py-1 px-3 rounded-full border border-primary/15 bg-white/80 text-primary text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">Deep Dive</span>
+<h1 class="feature-hero-title text-6xl md:text-7xl font-display font-semibold leading-[1.02] mb-8">
+                    Experience AI that <br/><span class="feature-hero-accent italic">thinks &amp; speaks</span> like a human.
                 </h1>
-<p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10">
+<p class="feature-body-copy text-xl leading-relaxed mb-10">
                     Go beyond simple chatbots. Audena’s enterprise voice engine handles complex customer interactions with perfect tone, zero latency, and 100+ language support.
                 </p>
 <div class="flex flex-wrap gap-4">
 <a class="bg-primary text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all inline-flex" href="/book-demo">
                         Talk to an Agent <span class="material-icons-round text-sm">arrow_forward</span>
 </a>
-<a class="border border-slate-300 dark:border-slate-700 px-8 py-4 rounded-full font-semibold hover:bg-white dark:hover:bg-slate-800 transition-all inline-flex" href="/book-demo">
+<a class="border border-slate-300 px-8 py-4 rounded-full font-semibold text-graphite bg-white/70 hover:bg-white transition-all inline-flex" href="/book-demo">
                         Watch the Walkthrough
                     </a>
 </div>
@@ -91,23 +104,23 @@
 <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white mb-6 feature-icon transition-transform">
 <span class="material-icons-round">record_voice_over</span>
 </div>
-<h2 class="text-4xl font-display mb-6 text-slate-900 dark:text-white">Human-like AI Voices</h2>
-<p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+<h2 class="feature-hero-title text-4xl font-display font-semibold mb-6">Human-like AI Voices</h2>
+<p class="feature-body-copy text-lg mb-8 leading-relaxed">
                         Our proprietary synthesis engine captures the nuance of human speech—the breaths, the pauses, and the emotional inflection that builds trust.
                     </p>
 <ul class="space-y-4">
 <li class="flex items-start gap-3">
 <span class="material-icons-round text-primary mt-1">check_circle</span>
 <div>
-<span class="font-semibold block text-slate-900 dark:text-white">Emotional Intelligence</span>
-<p class="text-sm text-slate-500">Detects caller sentiment and adjusts tone from empathetic to authoritative in real-time.</p>
+<span class="font-semibold block text-slate-900">Emotional Intelligence</span>
+<p class="feature-label text-sm">Detects caller sentiment and adjusts tone from empathetic to authoritative in real-time.</p>
 </div>
 </li>
 <li class="flex items-start gap-3">
 <span class="material-icons-round text-primary mt-1">check_circle</span>
 <div>
-<span class="font-semibold block text-slate-900 dark:text-white">Zero Latency Response</span>
-<p class="text-sm text-slate-500">Industry-leading &lt; 200ms response time ensures conversations flow naturally without awkward silences.</p>
+<span class="font-semibold block text-slate-900">Zero Latency Response</span>
+<p class="feature-label text-sm">Industry-leading &lt; 200ms response time ensures conversations flow naturally without awkward silences.</p>
 </div>
 </li>
 </ul>
@@ -121,11 +134,11 @@
 <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
 <div class="w-3 h-3 rounded-full bg-green-400"></div>
 </div>
-<span class="text-xs font-mono text-slate-400 uppercase tracking-widest">Voice Synthesis Studio</span>
+<span class="feature-label text-xs font-mono uppercase tracking-widest">Voice Synthesis Studio</span>
 </div>
 <div class="p-8">
 <div class="mb-8">
-<label class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-4">Voice Persona Selection</label>
+<label class="feature-label text-xs font-bold uppercase tracking-wider block mb-4">Voice Persona Selection</label>
 <div class="grid grid-cols-2 gap-4">
 <div class="p-4 rounded-xl border-2 border-primary bg-primary/5 flex items-center gap-3">
 <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
@@ -133,7 +146,7 @@
 </div>
 <div>
 <div class="text-sm font-bold">Clara</div>
-<div class="text-[10px] text-slate-500">Warm &amp; Helpful</div>
+<div class="feature-label text-[10px]">Warm &amp; Helpful</div>
 </div>
 <span class="material-icons-round text-primary ml-auto text-sm">volume_up</span>
 </div>
@@ -143,7 +156,7 @@
 </div>
 <div>
 <div class="text-sm font-bold">Marcus</div>
-<div class="text-[10px] text-slate-500">Direct &amp; Professional</div>
+<div class="feature-label text-[10px]">Direct &amp; Professional</div>
 </div>
 </div>
 </div>
@@ -183,7 +196,7 @@
 <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
 <div class="flex items-center gap-3">
 <span class="material-icons-round text-primary">translate</span>
-<span class="text-xs font-bold uppercase tracking-widest text-slate-500">Global Routing Engine</span>
+<span class="feature-label text-xs font-bold uppercase tracking-widest">Global Routing Engine</span>
 </div>
 </div>
 <div class="p-8">
@@ -211,11 +224,11 @@
 <div class="h-1 w-12 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
 <div class="h-full bg-primary w-2/3"></div>
 </div>
-<span class="text-[10px] text-slate-400 font-bold">SYNCING</span>
+<span class="feature-label text-[10px] font-bold">SYNCING</span>
 </div>
 </div>
 <div class="pt-4">
-<button class="w-full py-3 rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 text-slate-500 text-sm font-semibold hover:border-primary hover:text-primary transition-colors">
+<button class="w-full py-3 rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 feature-label text-sm font-semibold hover:border-primary hover:text-primary transition-colors">
                                         + Add 100+ More Languages
                                     </button>
 </div>
@@ -227,18 +240,18 @@
 <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white mb-6 feature-icon transition-transform">
 <span class="material-icons-round">language</span>
 </div>
-<h2 class="text-4xl font-display mb-6 text-slate-900 dark:text-white">Multi-language Support</h2>
-<p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+<h2 class="feature-hero-title text-4xl font-display font-semibold mb-6">Multi-language Support</h2>
+<p class="feature-body-copy text-lg mb-8 leading-relaxed">
                         Deploy your support globally with native fluency in 100+ languages and dialects. Audena doesn't just translate; it understands cultural context.
                     </p>
 <div class="grid grid-cols-2 gap-8">
 <div>
-<span class="text-3xl font-display text-primary block mb-2">100+</span>
-<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Supported Dialects</span>
+<span class="text-3xl font-display text-[#4F78B9] block mb-2">100+</span>
+<span class="feature-label text-xs font-bold uppercase tracking-wider">Supported Dialects</span>
 </div>
 <div>
-<span class="text-3xl font-display text-primary block mb-2">99.8%</span>
-<span class="text-xs font-bold uppercase tracking-wider text-slate-500">Nuance Accuracy</span>
+<span class="text-3xl font-display text-[#4F78B9] block mb-2">99.8%</span>
+<span class="feature-label text-xs font-bold uppercase tracking-wider">Nuance Accuracy</span>
 </div>
 </div>
 </div>
@@ -252,8 +265,8 @@
 <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white mb-6 feature-icon transition-transform">
 <span class="material-icons-round">insights</span>
 </div>
-<h2 class="text-4xl font-display mb-6 text-slate-900 dark:text-white">Real-time Analytics</h2>
-<p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+<h2 class="feature-hero-title text-4xl font-display font-semibold mb-6">Real-time Analytics</h2>
+<p class="feature-body-copy text-lg mb-8 leading-relaxed">
                         Monitor performance at a glance. Get deep insights into call resolution rates, customer sentiment trends, and common friction points.
                     </p>
 <ul class="space-y-6">
@@ -262,8 +275,8 @@
 <span class="material-icons-round text-primary">trending_up</span>
 </div>
 <div>
-<span class="font-semibold block text-slate-900 dark:text-white">Conversion Tracking</span>
-<p class="text-sm text-slate-500">Track how many voice interactions lead to successful appointments or sales.</p>
+<span class="font-semibold block text-slate-900">Conversion Tracking</span>
+<p class="feature-label text-sm">Track how many voice interactions lead to successful appointments or sales.</p>
 </div>
 </li>
 <li class="flex gap-4">
@@ -271,8 +284,8 @@
 <span class="material-icons-round text-primary">psychology</span>
 </div>
 <div>
-<span class="font-semibold block text-slate-900 dark:text-white">Sentiment Heatmaps</span>
-<p class="text-sm text-slate-500">Visualize where customers get frustrated and automatically optimize scripts.</p>
+<span class="font-semibold block text-slate-900">Sentiment Heatmaps</span>
+<p class="feature-label text-sm">Visualize where customers get frustrated and automatically optimize scripts.</p>
 </div>
 </li>
 </ul>
@@ -282,10 +295,10 @@
 <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden p-8">
 <div class="flex items-center justify-between mb-8">
 <div>
-<h4 class="text-lg font-bold">Call Performance</h4>
-<p class="text-xs text-slate-400">Last 24 Hours</p>
+<h4 class="text-lg font-bold text-slate-900">Call Performance</h4>
+<p class="feature-label text-xs">Last 24 Hours</p>
 </div>
-<select class="text-xs font-bold bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-3 pr-8 focus:ring-primary">
+<select class="feature-label text-xs font-bold bg-slate-100 border-none rounded-lg py-2 pl-3 pr-8 focus:ring-primary">
 <option>Weekly View</option>
 <option>Daily View</option>
 </select>
@@ -293,15 +306,15 @@
 <div class="grid grid-cols-3 gap-4 mb-8">
 <div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
 <span class="text-[10px] font-bold text-primary block mb-1">TOTAL CALLS</span>
-<span class="text-2xl font-display font-bold">12.4k</span>
+<span class="text-2xl font-display font-bold text-slate-900">12.4k</span>
 </div>
 <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-<span class="text-[10px] font-bold text-slate-500 block mb-1">SUCCESS</span>
-<span class="text-2xl font-display font-bold">94.2%</span>
+<span class="feature-label text-[10px] font-bold block mb-1">SUCCESS</span>
+<span class="text-2xl font-display font-bold text-slate-900">94.2%</span>
 </div>
 <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-<span class="text-[10px] font-bold text-slate-500 block mb-1">LATENCY</span>
-<span class="text-2xl font-display font-bold">185ms</span>
+<span class="feature-label text-[10px] font-bold block mb-1">LATENCY</span>
+<span class="text-2xl font-display font-bold text-slate-900">185ms</span>
 </div>
 </div>
 <div class="h-40 flex items-end gap-2 mb-4">
@@ -314,7 +327,7 @@
 <div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[80%]"></div>
 <div class="flex-1 bg-slate-100 dark:bg-slate-800 rounded-t-lg h-[70%]"></div>
 </div>
-<div class="flex justify-between text-[10px] font-bold text-slate-400">
+<div class="flex justify-between text-[10px] font-bold feature-label">
 <span>08:00 AM</span>
 <span>12:00 PM</span>
 <span>04:00 PM</span>
@@ -327,7 +340,7 @@
 </section>
 <div class="py-12 border-y border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark overflow-hidden">
 <div class="max-w-7xl mx-auto px-6 text-center">
-<p class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-8">Powering voice for the world's most innovative companies</p>
+<p class="feature-label text-xs font-bold tracking-widest uppercase mb-8">Powering voice for the world's most innovative companies</p>
 <div class="flex flex-wrap justify-center gap-12 md:gap-20 opacity-40 grayscale contrast-125 dark:invert">
 <div class="text-2xl font-bold">POSTMAN</div>
 <div class="text-2xl font-bold italic">Ramp</div>
