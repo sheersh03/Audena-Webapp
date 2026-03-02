@@ -49,154 +49,6 @@
         .dark .hero-gradient {
             background: radial-gradient(circle at 50% -20%, rgba(103, 141, 198, 0.1) 0%, rgba(18, 18, 18, 0) 60%);
         }
-        /* AI blob animation */
-        .blob-container {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.5;
-            will-change: transform;
-        }
-        .dark .blob { opacity: 0.35; }
-        .blob-1 {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(103, 141, 198, 0.4) 0%, rgba(139, 92, 246, 0.25) 100%);
-            top: -10%;
-            left: -5%;
-            animation: blob-float-1 18s ease-in-out infinite;
-        }
-        .blob-2 {
-            width: 350px;
-            height: 350px;
-            background: linear-gradient(225deg, rgba(139, 92, 246, 0.35) 0%, rgba(59, 130, 246, 0.2) 100%);
-            top: 20%;
-            right: -8%;
-            animation: blob-float-2 22s ease-in-out infinite;
-        }
-        .blob-3 {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(315deg, rgba(103, 141, 198, 0.3) 0%, rgba(236, 72, 153, 0.15) 100%);
-            bottom: 10%;
-            left: 15%;
-            animation: blob-float-3 20s ease-in-out infinite;
-        }
-        .blob-4 {
-            width: 250px;
-            height: 250px;
-            background: linear-gradient(45deg, rgba(59, 130, 246, 0.25) 0%, rgba(103, 141, 198, 0.2) 100%);
-            bottom: -5%;
-            right: 20%;
-            animation: blob-float-4 16s ease-in-out infinite;
-        }
-        .blob-5 {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(180deg, rgba(139, 92, 246, 0.2) 0%, rgba(103, 141, 198, 0.15) 100%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: blob-pulse 8s ease-in-out infinite;
-        }
-        @keyframes blob-float-1 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -40px) scale(1.05); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
-        @keyframes blob-float-2 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(-40px, 30px) scale(0.98); }
-            66% { transform: translate(25px, -25px) scale(1.02); }
-        }
-        @keyframes blob-float-3 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-30px, -20px) scale(1.03); }
-        }
-        @keyframes blob-float-4 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(20px, -30px) scale(0.97); }
-        }
-        @keyframes blob-pulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.4; }
-        }
-        .dark .blob-5 { animation: blob-pulse-dark 8s ease-in-out infinite; }
-        @keyframes blob-pulse-dark {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.35; }
-            50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.25; }
-        }
-        /* Futuristic AI/CRM feature blob - bottom-left highlight */
-        .blob-feature {
-            position: absolute;
-            bottom: -8%;
-            left: -5%;
-            width: 420px;
-            height: 420px;
-            border-radius: 50%;
-            filter: blur(70px);
-            opacity: 0.6;
-            will-change: transform;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.5) 0%, rgba(59, 130, 246, 0.35) 50%, rgba(236, 72, 153, 0.25) 100%);
-            animation: blob-feature-morph 12s ease-in-out infinite;
-        }
-        .blob-feature::before {
-            content: '';
-            position: absolute;
-            inset: -20%;
-            border-radius: 50%;
-            background: linear-gradient(225deg, rgba(103, 141, 198, 0.2) 0%, transparent 50%);
-            animation: blob-feature-glow 8s ease-in-out infinite alternate;
-        }
-        .blob-feature-icon {
-            position: absolute;
-            bottom: 12%;
-            left: 8%;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            border-radius: 20px;
-            z-index: 1;
-            animation: blob-icon-float 6s ease-in-out infinite;
-        }
-        .blob-feature-icon .material-symbols-outlined {
-            font-size: 40px;
-            color: rgba(139, 92, 246, 0.9);
-        }
-        .dark .blob-feature-icon {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.15) 100%);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-        .dark .blob-feature-icon .material-symbols-outlined {
-            color: rgba(255, 255, 255, 0.9);
-        }
-        @keyframes blob-feature-morph {
-            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            25% { transform: translate(15px, -25px) scale(1.08) rotate(2deg); }
-            50% { transform: translate(-20px, 10px) scale(0.95) rotate(-1deg); }
-            75% { transform: translate(25px, 15px) scale(1.05) rotate(1deg); }
-        }
-        @keyframes blob-feature-glow {
-            0% { opacity: 0.3; transform: scale(1); }
-            100% { opacity: 0.6; transform: scale(1.1); }
-        }
-        @keyframes blob-icon-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
         /* Subtle grid overlay for AI/tech feel */
         .hero-grid {
             position: absolute;
@@ -207,6 +59,106 @@
             background-size: 60px 60px;
             pointer-events: none;
             z-index: 0;
+        }
+        .hero-layout {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-copy {
+            text-align: center;
+        }
+        .hero-orb-panel {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 32rem;
+        }
+        .hero-orb-glow {
+            position: absolute;
+            width: 30rem;
+            height: 30rem;
+            border-radius: 9999px;
+            background:
+                radial-gradient(circle at 28% 28%, rgba(56, 189, 248, 0.36), transparent 32%),
+                radial-gradient(circle at 74% 26%, rgba(236, 72, 153, 0.38), transparent 30%),
+                radial-gradient(circle at 50% 74%, rgba(168, 85, 247, 0.34), transparent 34%);
+            filter: blur(44px);
+            opacity: 0.95;
+            animation: orb-glow-float 9s ease-in-out infinite;
+        }
+        .hero-orb-shell {
+            position: relative;
+            width: 28rem;
+            height: 28rem;
+            opacity: 0.98;
+            animation: orb-shell-float 10s ease-in-out infinite;
+        }
+        .hero-orb-shell svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            filter: drop-shadow(0 0 16px rgba(96, 165, 250, 0.35))
+                    drop-shadow(0 0 32px rgba(236, 72, 153, 0.28));
+        }
+        .hero-orb-core-pulse {
+            transform-origin: 200px 200px;
+            animation: orb-core-pulse 5.5s ease-in-out infinite;
+        }
+        .hero-orb-energy {
+            transform-origin: 200px 200px;
+            animation: orb-energy-sway 8s ease-in-out infinite;
+        }
+        .hero-orb-pulse {
+            animation: orb-pulse 6s ease-in-out infinite;
+        }
+        .hero-orb-spark {
+            animation: orb-spark 7s ease-in-out infinite;
+        }
+        @keyframes orb-shell-float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-12px) scale(1.025); }
+        }
+        @keyframes orb-pulse {
+            0%, 100% { opacity: 0.82; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.04); }
+        }
+        @keyframes orb-core-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.94; }
+            50% { transform: scale(1.04); opacity: 1; }
+        }
+        @keyframes orb-energy-sway {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.82; }
+            50% { transform: rotate(8deg) scale(1.03); opacity: 1; }
+        }
+        @keyframes orb-spark {
+            0%, 100% { opacity: 0.8; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-4px); }
+        }
+        @keyframes orb-glow-float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.72; }
+            50% { transform: translateY(18px) scale(1.06); opacity: 0.95; }
+        }
+        @media (min-width: 1024px) {
+            .hero-copy {
+                text-align: left;
+            }
+        }
+        @media (max-width: 1024px) {
+            .hero-orb-panel {
+                min-height: 22rem;
+                margin-bottom: 1rem;
+            }
+            .hero-orb-glow {
+                width: 22rem;
+                height: 22rem;
+                opacity: 0.72;
+            }
+            .hero-orb-shell {
+                width: 20rem;
+                height: 20rem;
+                opacity: 0.82;
+            }
         }
     </style>
 </head>
@@ -231,21 +183,11 @@
 </div>
 </div>
 </nav>
-<main class="pt-32">
-<section class="relative px-6 hero-gradient overflow-hidden pb-4">
-<div class="blob-container">
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
-<div class="blob blob-4"></div>
-<div class="blob blob-5"></div>
-<div class="blob-feature"></div>
-<div class="blob-feature-icon" aria-hidden="true">
-<span class="material-symbols-outlined">psychology</span>
-</div>
-</div>
+<main class="pt-20">
+<section class="relative flex min-h-[calc(100vh-5rem)] items-center px-6 hero-gradient overflow-hidden pb-10 pt-10">
 <div class="hero-grid"></div>
-<div class="max-w-5xl mx-auto text-center relative z-10">
+<div class="hero-layout max-w-7xl mx-auto grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+<div class="hero-copy order-2 lg:order-1">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in">
 <span class="relative flex h-2 w-2">
 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -256,17 +198,75 @@
 <h1 class="font-display text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
                     Automated AI Voice Calls <br/> That Sound <span class="text-primary italic font-serif font-normal">Human.</span>
 </h1>
-<p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+<p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed">
                     Audena powers human-like voice conversations at scale. Reach thousands of customers simultaneously without sacrificing the personal touch.
                 </p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
 <a class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all inline-block text-center" href="/book-demo">Start Free Trial</a>
 <a class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-white/10 transition-all flex items-center justify-center gap-2" href="/book-demo">
 <span class="material-symbols-outlined">play_circle</span>
                         Hear Demo
                     </a>
 </div>
-<div class="mt-24 relative max-w-6xl mx-auto">
+</div>
+<div class="hero-orb-panel order-1 lg:order-2" aria-hidden="true">
+<div class="hero-orb-glow"></div>
+<div class="hero-orb-shell">
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="orb-core" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(200 200) rotate(90) scale(180)">
+<stop stop-color="#070B1E"/>
+<stop offset="0.48" stop-color="#0F1638"/>
+<stop offset="0.72" stop-color="#17204C" stop-opacity="0.72"/>
+<stop offset="1" stop-color="#17204C" stop-opacity="0"/>
+</radialGradient>
+<filter id="orb-blur" x="0" y="0" width="400" height="400" filterUnits="userSpaceOnUse">
+<feGaussianBlur stdDeviation="6"/>
+</filter>
+</defs>
+<circle class="hero-orb-core-pulse" cx="200" cy="200" r="128" fill="url(#orb-core)"/>
+<g class="hero-orb-ring">
+<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200" dur="11s" repeatCount="indefinite"/>
+<circle cx="200" cy="200" r="154" stroke="#FFFFFF" stroke-opacity="0.88" stroke-width="3"/>
+<ellipse cx="200" cy="200" rx="138" ry="70" stroke="#64B5F6" stroke-opacity="0.92" stroke-width="2.5"/>
+<ellipse cx="200" cy="200" rx="96" ry="152" stroke="#EC4899" stroke-opacity="0.72" stroke-width="2"/>
+</g>
+<g class="hero-orb-ring">
+<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="360 200 200" to="0 200 200" dur="8s" repeatCount="indefinite"/>
+<path d="M86 166C122 107 179 79 238 88C289 96 326 131 334 186C341 233 321 284 272 309C220 336 146 328 104 281C70 243 65 201 86 166Z" stroke="#A78BFA" stroke-opacity="0.9" stroke-width="3"/>
+<path d="M95 218C119 149 187 117 250 128C306 138 334 184 320 241C308 295 255 327 194 319C132 311 81 260 95 218Z" stroke="#60A5FA" stroke-opacity="0.82" stroke-width="2.5"/>
+</g>
+<g class="hero-orb-energy hero-orb-pulse" filter="url(#orb-blur)">
+<path d="M116 104C157 81 237 79 288 111" stroke="#67E8F9" stroke-width="10" stroke-linecap="round"/>
+<path d="M304 131C332 166 340 238 314 286" stroke="#F472B6" stroke-width="11" stroke-linecap="round"/>
+<path d="M103 280C137 317 216 331 274 311" stroke="#C084FC" stroke-width="10" stroke-linecap="round"/>
+<path d="M82 136C61 181 64 248 93 289" stroke="#60A5FA" stroke-width="9" stroke-linecap="round"/>
+</g>
+<g class="hero-orb-spark">
+<circle cx="108" cy="130" r="7" fill="#67E8F9"/>
+<circle cx="295" cy="117" r="8" fill="#F472B6"/>
+<circle cx="302" cy="286" r="7" fill="#C084FC"/>
+<circle cx="126" cy="299" r="6" fill="#93C5FD"/>
+</g>
+<g class="hero-orb-node">
+<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200" dur="6s" repeatCount="indefinite"/>
+<circle cx="200" cy="46" r="10" fill="#F472B6"/>
+</g>
+<g class="hero-orb-node">
+<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="360 200 200" to="0 200 200" dur="7s" repeatCount="indefinite"/>
+<circle cx="340" cy="200" r="8" fill="#67E8F9"/>
+</g>
+<g class="hero-orb-node">
+<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 200 200;24 200 200;0 200 200" dur="4.5s" repeatCount="indefinite"/>
+<circle cx="142" cy="326" r="9" fill="#C084FC"/>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 pb-10 pt-4" id="hero-preview">
+<div class="relative max-w-6xl mx-auto">
 <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-[2rem] blur-2xl opacity-50 -z-10"></div>
 <div class="backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 rounded-2xl border border-gray-200/80 dark:border-white/10 shadow-2xl overflow-hidden">
 <div class="h-12 border-b border-gray-200 dark:border-white/10 flex items-center px-4 justify-between bg-gray-50/80 dark:bg-black/20">
@@ -358,7 +358,6 @@
 <span>Heat Sink</span>
 <span>Auto</span>
 <span>Umap</span>
-</div>
 </div>
 </div>
 </div>
