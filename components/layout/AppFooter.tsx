@@ -61,7 +61,7 @@ export function AppFooter() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="hover:text-[#678DC6] transition-colors"
+                      className="hover:text-primary transition-colors"
                     >
                       {link.label}
                     </Link>

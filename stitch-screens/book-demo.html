@@ -50,21 +50,21 @@
 <img src="/logo/audena-logo-dark-bg.png" alt="Audena" class="h-8 w-auto object-contain hidden dark:block"/>
 </a>
 <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
-<a class="hover:text-primary transition-colors" href="#">Platform</a>
+<a class="hover:text-primary transition-colors" href="/#features">Platform</a>
 <a class="hover:text-primary transition-colors" href="/features">Features</a>
-<a class="hover:text-primary transition-colors" href="#">Enterprise</a>
-<a class="hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="hover:text-primary transition-colors" href="/#how-it-works">Methodology</a>
+<a class="hover:text-primary transition-colors" href="/pricing">Pricing</a>
 </div>
 </div>
 <div class="flex items-center gap-4">
 <a class="text-sm font-semibold hover:text-primary transition-colors px-4 py-2" href="/login">Sign in</a>
-<button class="bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity">
+<a class="bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity inline-block" href="/book-demo#form">
                     Talk to Sales
-                </button>
+                </a>
 </div>
 </div>
 </nav>
-<main class="max-w-7xl mx-auto px-6 py-12 lg:py-24">
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
 <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 <div class="space-y-10">
 <div class="space-y-4">
@@ -72,31 +72,31 @@
 <span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
                         Schedule a Demo
                     </div>
-<h1 class="text-5xl lg:text-7xl font-display leading-[1.1] dark:text-white">
-                        Experience the future of <span class="italic text-primary">voice automation.</span>
+<h1 class="text-5xl lg:text-7xl font-display leading-[1.1] text-slate-900 dark:text-white">
+                        Experience the future of <span class="italic font-serif text-primary">voice automation.</span>
 </h1>
 <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
                         Join 500+ enterprises using Audena to handle millions of customer calls with human-like empathy and 99.9% uptime.
                     </p>
 </div>
-<form class="space-y-6 max-w-xl">
+<form class="space-y-6 max-w-xl" id="form">
 <div class="grid md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="text-sm font-semibold text-slate-700 dark:text-slate-300" for="full_name">Full Name</label>
-<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary transition-all" id="full_name" placeholder="Sarah Johnson" type="text"/>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" id="full_name" placeholder="Sarah Johnson" type="text"/>
 </div>
 <div class="space-y-2">
 <label class="text-sm font-semibold text-slate-700 dark:text-slate-300" for="company_name">Company Name</label>
-<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary transition-all" id="company_name" placeholder="Acme Corp" type="text"/>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" id="company_name" placeholder="Acme Corp" type="text"/>
 </div>
 </div>
 <div class="space-y-2">
 <label class="text-sm font-semibold text-slate-700 dark:text-slate-300" for="work_email">Work Email</label>
-<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary transition-all" id="work_email" placeholder="sarah@acme.com" type="email"/>
+<input class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" id="work_email" placeholder="sarah@acme.com" type="email"/>
 </div>
 <div class="space-y-2">
 <label class="text-sm font-semibold text-slate-700 dark:text-slate-300" for="call_volume">Monthly Call Volume</label>
-<select class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 focus:border-primary transition-all appearance-none cursor-pointer" id="call_volume">
+<select class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none cursor-pointer" id="call_volume">
 <option disabled="" selected="" value="">Select volume range</option>
 <option value="10k-50k">10,000 - 50,000 calls</option>
 <option value="50k-250k">50,000 - 250,000 calls</option>
@@ -109,7 +109,7 @@
                         <span class="material-icons-round text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </button>
 <p class="text-xs text-slate-500 text-center">
-                        By clicking, you agree to our <a class="underline" href="#">Terms</a> and <a class="underline" href="#">Privacy Policy</a>.
+                        By clicking, you agree to our <a class="underline hover:text-primary" href="/about">Terms</a> and <a class="underline hover:text-primary" href="/about">Privacy Policy</a>.
                     </p>
 </form>
 </div>
@@ -132,13 +132,13 @@
 <p class="text-xs font-medium text-slate-500 uppercase tracking-widest">Languages</p>
 </div>
 </div>
-<hr class="border-slate-100 dark:border-slate-800"/>
+<hr class="border-slate-200 dark:border-slate-700"/>
 <div class="space-y-6">
 <p class="text-lg italic font-display text-slate-700 dark:text-slate-300 leading-relaxed">
                                 "Audena didn't just automate our calls; they improved our customer satisfaction scores by 40% in the first quarter alone. It's the most reliable voice AI we've ever tested."
                             </p>
 <div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
 <img alt="Executive Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNAYntcIdBAwALAnlDpB0U3c_rtdrf0OTcZ6WOdjBdxNPZ5BRBqa3_6pmWn7iBCDUdP_t0pqLdwonAM2ADrfZCbZ6_mp2-AEIhgWUqSRdbh7Ge-HSqLRNZjTJP4h1WjQWoff7bzYK41FEkvsRTFFpgOVEy1nah7uOSY9K-gLPRM-iGv9vz-_-ueiZYk_dOI88yByqepTWQaEfCX3bpGlG4STJZdYmXlJBgwLpFCx9WE43BUCMFmk0uYQVd9IOoNG7U7rNc8GnYTiQ"/>
 </div>
 <div>
@@ -147,7 +147,7 @@
 </div>
 </div>
 </div>
-<div class="pt-4 flex items-center justify-between gap-4 grayscale opacity-60 dark:invert">
+<div class="pt-4 flex items-center justify-between gap-4 grayscale opacity-60 dark:opacity-80">
 <div class="flex flex-col items-center">
 <span class="material-icons-round text-3xl">security</span>
 <span class="text-[10px] font-bold mt-1">SOC2 TYPE II</span>
@@ -168,8 +168,8 @@
 </div>
 </div>
 <div class="px-4">
-<p class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4 text-center">Powering teams at</p>
-<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 grayscale opacity-40 dark:invert">
+<p class="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] mb-4 text-center">Powering teams at</p>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 grayscale opacity-40 dark:opacity-60">
 <img alt="Partner Logo" class="h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7roy122g4iHYN3kJH8MFOTeYyZTS9w9CzUZAjX5rygEg-TzRx79vS6RppcIASywKYLvCKYO4zX3H38iC7p9naPKljqdj3yxDZFLbwS5IZi7krJM4rpk8cWpY3aZO36FHvSGFIT7DT0rp0NemMV1ZVRhoyaJskCaIg1FG1wH7bQMz_CoXEyvm5E3QCv88SjCCrxO84rFmbTuV5MniYGp3UfXaN30ocTHKHa6TFWDAXzoyqP7E5Vnr7DU76sW2uHo5SaiSLedx0XoM"/>
 <img alt="Partner Logo" class="h-5 mt-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQzywLoGxGEXAfzjTs5YZPLgdQ_2cEy01DRRBClpYjBYmSdUk15Ljd5YD29CqHa2lEERK6rqjAJ2Bvuh89t3JaUQRnTZGADrNFNltY8BIX7YT-v152roKWP9nOCaYeatWgZF7Px2zfrd_V5JigQgrFgiqaoN4dGBRBOvT4FQdMfrdL8B1-miEuDAOZVAixAVPLUHKNX5OS-TIK58TbLHv02pfm0SmYwMwcietukYlRTPhGA-IvECNuLrPGPC3yF7tX4WZHkvmVmU0"/>
 <img alt="Partner Logo" class="h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA8DJ4LEeyhTj5BvToOLnGnD6fhgCPwZ_3km2N6ENiLcv-BBRN8pWxT9gTFvnEgkY1egUpiqDmsnSIOQwqQyFEwVA7_JDz-OLYp8J0hjB9GWkYow3dCKRTA0E6hUUxEXIqGYFwVkfgkqe8hBd9k3erdmkV12DGVGTeFLi9SvNn4jaCRN5d-ZiG3q8T1DHvV1qSpqNIWlg2Q0K2AFOFr7YDQrkAB7d0LzJeUTh0QsUJhAkNPum6yT6leaz-9Ap24HVPDh6_p6oAuXg"/>
@@ -181,16 +181,16 @@
 </main>
 <footer class="border-t border-slate-200 dark:border-slate-800 mt-12 py-12">
 <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-2 grayscale opacity-70">
+<a class="flex items-center gap-2 grayscale opacity-70 hover:opacity-100 transition-opacity group" href="/">
 <img src="/logo/audena-logo-light-bg.png" alt="Audena AI" class="h-6 w-auto object-contain dark:hidden"/>
 <img src="/logo/audena-logo-dark-bg.png" alt="Audena AI" class="h-6 w-auto object-contain hidden dark:block"/>
 <span class="font-bold text-slate-500">Audena AI</span>
-</div>
+</a>
 <div class="flex gap-8 text-sm text-slate-500">
-<a class="hover:text-primary" href="#">Status</a>
-<a class="hover:text-primary" href="#">Documentation</a>
-<a class="hover:text-primary" href="#">Support</a>
-<a class="hover:text-primary" href="#">Careers</a>
+<a class="hover:text-primary transition-colors" href="/about">Status</a>
+<a class="hover:text-primary transition-colors" href="/developer-portal">Documentation</a>
+<a class="hover:text-primary transition-colors" href="/contact">Support</a>
+<a class="hover:text-primary transition-colors" href="/about">Careers</a>
 </div>
 <p class="text-sm text-slate-400">© 2024 Audena Platforms Inc.</p>
 </div>

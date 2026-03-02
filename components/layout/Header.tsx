@@ -2,28 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { siteConfig } from "@/config/site";
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <nav
       id="stitch-nav"
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
-        scrolled
-          ? "bg-white/60 dark:bg-black/60 backdrop-blur-md border-gray-200/50 dark:border-white/10"
-          : "bg-white/95 dark:bg-black/95 backdrop-blur-md border-gray-200/50 dark:border-white/10 shadow-sm"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 rounded-b-[1.75rem] border-b border-slate-200/80 bg-white/95 shadow-[0_2px_12px_rgba(15,23,42,0.06)] backdrop-blur-md transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-10">
@@ -36,15 +26,7 @@ export function Header() {
               alt={siteConfig.name}
               width={140}
               height={32}
-              className="h-8 w-auto object-contain dark:hidden"
-              priority
-            />
-            <Image
-              src={siteConfig.logo.darkBg}
-              alt={siteConfig.name}
-              width={140}
-              height={32}
-              className="h-8 w-auto object-contain hidden dark:block"
+              className="h-8 w-auto object-contain"
               priority
             />
           </Link>
@@ -53,7 +35,11 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium hover:text-[#678DC6] transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  pathname === item.href
+                    ? "text-primary"
+                    : "text-slate-700 hover:text-primary"
+                }`}
               >
                 {item.label}
               </Link>
@@ -63,13 +49,17 @@ export function Header() {
         <div className="flex items-center gap-4">
           <Link
             href={siteConfig.signInHref}
-            className="hidden sm:block text-sm font-semibold px-4 py-2 hover:opacity-70 transition-opacity"
+            className="hidden sm:block px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:text-primary"
           >
             Sign in
           </Link>
           <Link
             href={siteConfig.bookDemoHref}
-            className="bg-[#323432] dark:bg-white text-white dark:text-[#323432] px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all"
+            className={`px-4 py-2 text-sm font-semibold transition-colors ${
+              pathname === siteConfig.bookDemoHref
+                ? "text-primary"
+                : "text-slate-700 hover:text-primary"
+            }`}
           >
             Book a Demo
           </Link>
@@ -91,7 +81,7 @@ export function Header() {
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white dark:bg-gray-900 p-6 shadow-xl">
+          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white p-6 shadow-xl">
             <div className="flex flex-col gap-6 pt-16">
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -105,7 +95,11 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium hover:text-[#678DC6]"
+                  className={`text-lg font-medium transition-colors ${
+                    pathname === item.href
+                      ? "text-primary"
+                      : "text-slate-700 hover:text-primary"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -114,14 +108,18 @@ export function Header() {
                 <Link
                   href={siteConfig.signInHref}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-semibold py-2"
+                  className="py-2 text-sm font-semibold text-slate-700"
                 >
                   Sign in
                 </Link>
                 <Link
                   href={siteConfig.bookDemoHref}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="bg-[#323432] dark:bg-white text-white dark:text-[#323432] px-5 py-2.5 rounded-full text-sm font-semibold text-center"
+                  className={`py-2 text-sm font-semibold transition-colors ${
+                    pathname === siteConfig.bookDemoHref
+                      ? "text-primary"
+                      : "text-slate-700 hover:text-primary"
+                  }`}
                 >
                   Book a Demo
                 </Link>

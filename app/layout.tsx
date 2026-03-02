@@ -14,6 +14,19 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var path = window.location.pathname;
+                if (path === '/book-demo' || path === '/contact') {
+                  document.documentElement.classList.remove('dark');
+                  try { localStorage.setItem('theme', 'light'); } catch(e) {}
+                }
+              })();
+            `,
+          }}
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif&display=swap"
           rel="stylesheet"
