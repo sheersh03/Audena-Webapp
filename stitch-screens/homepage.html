@@ -72,114 +72,411 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 32rem;
+            min-height: 34rem;
+            padding: 1rem;
         }
-        .hero-orb-glow {
+        .hero-orb-stage {
+            position: relative;
+            width: min(100%, 34rem);
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            isolation: isolate;
+        }
+        .hero-orb-backdrop {
             position: absolute;
-            width: 30rem;
-            height: 30rem;
+            inset: 6%;
             border-radius: 9999px;
             background:
-                radial-gradient(circle at 28% 28%, rgba(56, 189, 248, 0.36), transparent 32%),
-                radial-gradient(circle at 74% 26%, rgba(236, 72, 153, 0.38), transparent 30%),
-                radial-gradient(circle at 50% 74%, rgba(168, 85, 247, 0.34), transparent 34%);
-            filter: blur(44px);
-            opacity: 0.95;
-            animation: orb-glow-float 9s ease-in-out infinite;
+                radial-gradient(circle at 50% 50%, rgba(7, 16, 34, 0.7) 0%, rgba(0, 0, 0, 0.18) 54%, rgba(0, 0, 0, 0) 76%);
+            filter: blur(18px);
+            animation: hero-stage-drift 12s ease-in-out infinite;
         }
-        .hero-orb-shell {
+        .hero-orb-aura {
+            position: absolute;
+            width: 88%;
+            height: 88%;
+            border-radius: 9999px;
+            background:
+                radial-gradient(circle at 28% 32%, rgba(90, 245, 255, 0.34), transparent 22%),
+                radial-gradient(circle at 70% 24%, rgba(216, 132, 255, 0.26), transparent 24%),
+                radial-gradient(circle at 58% 72%, rgba(80, 106, 255, 0.22), transparent 28%);
+            filter: blur(28px);
+            opacity: 0.9;
+            animation: hero-aura-shift 14s ease-in-out infinite;
+        }
+        .hero-sphere {
             position: relative;
-            width: 28rem;
-            height: 28rem;
-            opacity: 0.98;
-            animation: orb-shell-float 10s ease-in-out infinite;
+            width: 78%;
+            aspect-ratio: 1 / 1;
+            border-radius: 9999px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 48%, rgba(6, 11, 24, 0.96) 0%, rgba(4, 8, 18, 0.98) 58%, rgba(0, 0, 0, 1) 100%);
+            box-shadow:
+                inset 0 0 120px rgba(115, 230, 255, 0.1),
+                inset 0 0 160px rgba(173, 113, 255, 0.08),
+                0 0 80px rgba(64, 189, 255, 0.14);
+            animation: hero-stage-drift 10s ease-in-out infinite;
         }
-        .hero-orb-shell svg {
-            width: 100%;
-            height: 100%;
-            overflow: visible;
-            filter: drop-shadow(0 0 16px rgba(96, 165, 250, 0.35))
-                    drop-shadow(0 0 32px rgba(236, 72, 153, 0.28));
+        .hero-sphere-grain {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1.5px),
+                radial-gradient(circle at 72% 42%, rgba(120, 241, 255, 0.24) 0 1px, transparent 1.8px),
+                radial-gradient(circle at 54% 80%, rgba(225, 159, 255, 0.18) 0 1.2px, transparent 2px);
+            background-size: 18px 18px, 22px 22px, 24px 24px;
+            mix-blend-mode: screen;
+            opacity: 0.32;
+            animation: hero-grain-drift 8s linear infinite;
         }
-        .hero-orb-core-pulse {
-            transform-origin: 200px 200px;
-            animation: orb-core-pulse 5.5s ease-in-out infinite;
+        .hero-sphere-stream {
+            position: absolute;
+            border-radius: 9999px;
+            mix-blend-mode: screen;
+            filter: blur(9px);
+            opacity: 0.95;
         }
-        .hero-orb-energy {
-            transform-origin: 200px 200px;
-            animation: orb-energy-sway 8s ease-in-out infinite;
+        .hero-sphere-stream::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            opacity: 0.35;
         }
-        .hero-orb-pulse {
-            animation: orb-pulse 6s ease-in-out infinite;
+        .hero-sphere-stream-1 {
+            inset: 10% 6% 18% 18%;
+            border-top: 18px solid rgba(97, 244, 255, 0.86);
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            transform: rotate(24deg);
+            animation: hero-stream-spin-1 13s ease-in-out infinite;
+            box-shadow: 0 0 24px rgba(88, 234, 255, 0.34);
         }
-        .hero-orb-spark {
-            animation: orb-spark 7s ease-in-out infinite;
+        .hero-sphere-stream-2 {
+            inset: 24% 12% 8% 8%;
+            border-bottom: 15px solid rgba(208, 131, 255, 0.76);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            transform: rotate(-34deg);
+            animation: hero-stream-spin-2 15s ease-in-out infinite;
+            box-shadow: 0 0 24px rgba(208, 131, 255, 0.24);
         }
-        @keyframes orb-shell-float {
+        .hero-sphere-stream-3 {
+            inset: 16% 18% 24% 10%;
+            border-top: 11px solid rgba(120, 206, 255, 0.64);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            transform: rotate(132deg);
+            animation: hero-stream-spin-3 11s ease-in-out infinite;
+            box-shadow: 0 0 18px rgba(120, 206, 255, 0.24);
+        }
+        .hero-sphere-sheen {
+            position: absolute;
+            inset: 8%;
+            border-radius: 9999px;
+            background:
+                radial-gradient(circle at 74% 28%, rgba(173, 248, 255, 0.9), rgba(173, 248, 255, 0.18) 18%, transparent 38%),
+                radial-gradient(circle at 18% 74%, rgba(95, 232, 255, 0.5), transparent 24%);
+            filter: blur(22px);
+            mix-blend-mode: screen;
+            opacity: 0.8;
+            animation: hero-sheen-shift 9s ease-in-out infinite;
+        }
+        .hero-sphere-shadow {
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background:
+                radial-gradient(circle at 54% 46%, transparent 0 48%, rgba(0, 0, 0, 0.42) 72%, rgba(0, 0, 0, 0.82) 100%);
+            pointer-events: none;
+        }
+        .hero-sphere-particle {
+            position: absolute;
+            left: calc(var(--x) * 1%);
+            top: calc(var(--y) * 1%);
+            width: calc(var(--size) * 1px);
+            height: calc(var(--size) * 1px);
+            border-radius: 9999px;
+            background: rgba(128, 238, 255, 0.92);
+            box-shadow: 0 0 10px rgba(128, 238, 255, 0.54);
+            opacity: var(--opacity, 0.7);
+            animation: hero-particle-float var(--duration, 9s) ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+        }
+        .hero-sphere-particle.violet {
+            background: rgba(212, 150, 255, 0.88);
+            box-shadow: 0 0 10px rgba(212, 150, 255, 0.44);
+        }
+        .hero-sphere-particle.soft {
+            opacity: 0.4;
+            filter: blur(0.6px);
+        }
+        .hero-orb-dust {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .hero-orb-dust span {
+            position: absolute;
+            width: calc(var(--size) * 1px);
+            height: calc(var(--size) * 1px);
+            left: calc(var(--x) * 1%);
+            top: calc(var(--y) * 1%);
+            border-radius: 9999px;
+            background: rgba(122, 236, 255, 0.72);
+            box-shadow: 0 0 12px rgba(122, 236, 255, 0.22);
+            opacity: 0.42;
+            filter: blur(0.4px);
+            animation: hero-dust-orbit var(--duration, 16s) linear infinite;
+            animation-delay: var(--delay, 0s);
+            transform-origin: center;
+        }
+        .hero-orb-dust span.violet {
+            background: rgba(207, 145, 255, 0.62);
+            box-shadow: 0 0 12px rgba(207, 145, 255, 0.18);
+        }
+        @keyframes hero-stage-drift {
             0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-12px) scale(1.025); }
+            50% { transform: translateY(-14px) scale(1.02); }
         }
-        @keyframes orb-pulse {
-            0%, 100% { opacity: 0.82; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.04); }
+        @keyframes hero-aura-shift {
+            0%, 100% { transform: scale(0.98) translate(0, 0); opacity: 0.74; }
+            50% { transform: scale(1.05) translate(1.5%, 2%); opacity: 0.96; }
         }
-        @keyframes orb-core-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.94; }
-            50% { transform: scale(1.04); opacity: 1; }
+        @keyframes hero-stream-spin-1 {
+            0%, 100% { transform: rotate(24deg) scale(1); opacity: 0.82; }
+            50% { transform: rotate(42deg) scale(1.06); opacity: 1; }
         }
-        @keyframes orb-energy-sway {
-            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.82; }
-            50% { transform: rotate(8deg) scale(1.03); opacity: 1; }
+        @keyframes hero-stream-spin-2 {
+            0%, 100% { transform: rotate(-34deg) scale(1); opacity: 0.78; }
+            50% { transform: rotate(-56deg) scale(1.04); opacity: 0.98; }
         }
-        @keyframes orb-spark {
-            0%, 100% { opacity: 0.8; transform: translateY(0); }
-            50% { opacity: 1; transform: translateY(-4px); }
+        @keyframes hero-stream-spin-3 {
+            0%, 100% { transform: rotate(132deg) scale(1); opacity: 0.62; }
+            50% { transform: rotate(152deg) scale(1.06); opacity: 0.92; }
         }
-        @keyframes orb-glow-float {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.72; }
-            50% { transform: translateY(18px) scale(1.06); opacity: 0.95; }
+        @keyframes hero-sheen-shift {
+            0%, 100% { transform: rotate(0deg) translateY(0); opacity: 0.62; }
+            50% { transform: rotate(10deg) translateY(-1.5%); opacity: 0.9; }
+        }
+        @keyframes hero-grain-drift {
+            0% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(-2%, 1.5%, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+        @keyframes hero-particle-float {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(0.92); opacity: var(--opacity, 0.7); }
+            50% { transform: translate3d(calc(var(--dx, 0) * 1px), calc(var(--dy, 0) * 1px), 0) scale(1.28); opacity: 1; }
+        }
+        @keyframes hero-dust-orbit {
+            0% { transform: translate3d(0, 0, 0) scale(0.8); opacity: 0.12; }
+            25% { opacity: 0.4; }
+            50% { transform: translate3d(calc(var(--dx, 0) * 1px), calc(var(--dy, 0) * 1px), 0) scale(1.2); opacity: 0.72; }
+            75% { opacity: 0.3; }
+            100% { transform: translate3d(0, 0, 0) scale(0.8); opacity: 0.12; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-orb-backdrop,
+            .hero-orb-aura,
+            .hero-sphere,
+            .hero-sphere-stream,
+            .hero-sphere-sheen,
+            .hero-sphere-grain,
+            .hero-sphere-particle,
+            .hero-orb-dust span {
+                animation: none !important;
+            }
         }
         @media (min-width: 1024px) {
             .hero-copy {
-                text-align: left;
+                text-align: center;
             }
         }
         @media (max-width: 1024px) {
             .hero-orb-panel {
-                min-height: 22rem;
+                min-height: 24rem;
                 margin-bottom: 1rem;
             }
-            .hero-orb-glow {
-                width: 22rem;
-                height: 22rem;
-                opacity: 0.72;
-            }
-            .hero-orb-shell {
-                width: 20rem;
-                height: 20rem;
-                opacity: 0.82;
+            .hero-orb-stage {
+                width: min(100%, 26rem);
             }
         }
         @media (max-width: 640px) {
             .hero-orb-panel {
-                min-height: 16rem;
+                min-height: 18rem;
                 margin-bottom: 0.25rem;
             }
-            .hero-orb-glow {
-                width: 15rem;
-                height: 15rem;
-                filter: blur(28px);
-                opacity: 0.62;
+            .hero-orb-stage {
+                width: min(100%, 18rem);
             }
-            .hero-orb-shell {
-                width: 14rem;
-                height: 14rem;
-                opacity: 0.78;
+            .hero-sphere {
+                width: 82%;
             }
         }
     </style>
 </head>
 <body class="font-body bg-background-light dark:bg-background-dark text-graphite dark:text-gray-100 antialiased overflow-x-hidden">
+<style>
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #678DC6 0%, #4A6999 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-gradient {
+      background:
+        radial-gradient(circle at 72% 34%, rgba(14, 25, 68, 0.12) 0%, rgba(248, 249, 250, 0) 28%),
+        radial-gradient(circle at 50% -20%, rgba(103, 141, 198, 0.15) 0%, rgba(248, 249, 250, 0) 60%);
+    }
+    .dark .hero-gradient {
+      background:
+        radial-gradient(circle at 72% 34%, rgba(49, 107, 255, 0.14) 0%, rgba(18, 18, 18, 0) 28%),
+        radial-gradient(circle at 50% -20%, rgba(103, 141, 198, 0.1) 0%, rgba(18, 18, 18, 0) 60%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(103, 141, 198, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(103, 141, 198, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-layout {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 88rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .hero-copy {
+      text-align: center;
+      width: 100%;
+      max-width: 62rem;
+      position: relative;
+      z-index: 4;
+    }
+    .hero-orb-panel {
+      position: relative;
+      width: 100%;
+      min-height: clamp(18rem, 42vh, 26rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 2rem;
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 8px 32px rgba(0, 0, 0, 0.08);
+      isolation: isolate;
+    }
+    .hero-orb-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.4) 0%, transparent 18%),
+        radial-gradient(circle at 84% 12%, rgba(255, 255, 255, 0.2) 0%, transparent 20%);
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-orb-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .hero-wave-mount {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: inherit;
+    }
+    .hero-wave-stage {
+      position: absolute;
+      inset: 0.5rem;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+    .hero-wave-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    .hero-wave-track {
+      position: absolute;
+      inset: 0;
+      width: 200%;
+      animation: hero-wave-flow 3s linear infinite;
+    }
+    .hero-wave-track-slow {
+      animation-duration: 5s;
+      animation-direction: reverse;
+      opacity: 0.85;
+    }
+    .hero-wave-ribbon {
+      filter: url(#hero-wave-soft);
+    }
+    .hero-wave-base {
+      fill: url(#hero-wave-grad-base);
+      opacity: 0.95;
+    }
+    .hero-wave-mid {
+      fill: url(#hero-wave-grad-mid);
+      opacity: 0.55;
+    }
+    .hero-wave-top {
+      fill: url(#hero-wave-grad-top);
+      opacity: 0.25;
+    }
+    @keyframes hero-wave-flow {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 1024px) {
+      .hero-orb-panel {
+        min-height: clamp(16rem, 34vh, 21rem);
+      }
+    }
+    @media (max-width: 640px) {
+      .hero-orb-panel {
+        min-height: clamp(14rem, 28vh, 18rem);
+        border-radius: 1.5rem;
+      }
+      .hero-layout {
+        gap: 1.5rem;
+      }
+      .hero-wave-stage {
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+        border-radius: 1.2rem;
+      }
+    }
+</style>
 <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-gray-200/50 dark:border-white/10 bg-white/70 dark:bg-black/70 transition-all duration-300">
 <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 <div class="flex items-center gap-10">
@@ -203,8 +500,52 @@
 <main class="pt-16">
 <section class="relative flex min-h-[calc(100vh-4rem)] items-center px-4 sm:px-6 hero-gradient overflow-hidden pb-8 pt-6 sm:pb-10 sm:pt-10">
 <div class="hero-grid"></div>
-<div class="hero-layout max-w-7xl mx-auto grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-<div class="hero-copy order-2 lg:order-1">
+<div class="hero-layout">
+<div class="hero-orb-panel" aria-hidden="true">
+<div class="hero-wave-mount">
+<div class="hero-wave-stage">
+<div class="hero-wave-track">
+<svg class="hero-wave-svg" viewBox="0 0 800 200" preserveAspectRatio="none">
+<defs>
+<linearGradient id="hero-wave-grad-base" x1="0%" y1="100%" x2="0%" y2="0%">
+<stop offset="0%" stop-color="#4169E1"/>
+<stop offset="100%" stop-color="#6A5ACD"/>
+</linearGradient>
+<linearGradient id="hero-wave-grad-mid" x1="0%" y1="100%" x2="0%" y2="0%">
+<stop offset="0%" stop-color="#BA55D3"/>
+<stop offset="100%" stop-color="#DA70D6"/>
+</linearGradient>
+<linearGradient id="hero-wave-grad-top" x1="0%" y1="100%" x2="0%" y2="0%">
+<stop offset="0%" stop-color="#87CEEB"/>
+<stop offset="100%" stop-color="#B0E0E6"/>
+</linearGradient>
+<filter id="hero-wave-soft" x="-20%" y="-20%" width="140%" height="140%">
+<feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+<feBlend in="SourceGraphic" in2="blur" mode="normal"/>
+</filter>
+</defs>
+<path id="hero-wave-base" class="hero-wave-ribbon hero-wave-base" d="M0,200 C80,120 160,80 240,120 C320,160 400,200 400,200 L400,200 L0,200 Z"/>
+<path id="hero-wave-mid" class="hero-wave-ribbon hero-wave-mid" d="M0,200 C100,80 200,40 300,80 C400,120 400,200 400,200 L400,200 L0,200 Z"/>
+<path id="hero-wave-top" class="hero-wave-ribbon hero-wave-top" d="M0,200 C80,150 160,110 240,150 C320,190 400,200 400,200 L400,200 L0,200 Z"/>
+<use href="#hero-wave-base" transform="translate(400,0)"/>
+<use href="#hero-wave-mid" transform="translate(400,0)"/>
+<use href="#hero-wave-top" transform="translate(400,0)"/>
+</svg>
+</div>
+<div class="hero-wave-track hero-wave-track-slow">
+<svg class="hero-wave-svg" viewBox="0 0 800 200" preserveAspectRatio="none">
+<use href="#hero-wave-base" class="hero-wave-ribbon hero-wave-base"/>
+<use href="#hero-wave-mid" class="hero-wave-ribbon hero-wave-mid"/>
+<use href="#hero-wave-top" class="hero-wave-ribbon hero-wave-top"/>
+<use href="#hero-wave-base" transform="translate(400,0)"/>
+<use href="#hero-wave-mid" transform="translate(400,0)"/>
+<use href="#hero-wave-top" transform="translate(400,0)"/>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="hero-copy">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in">
 <span class="relative flex h-2 w-2">
 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -215,167 +556,15 @@
 <h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 sm:mb-8 leading-[1.05] sm:leading-[1.1]">
                     Automated AI Voice Calls <br/> That Sound <span class="text-primary italic font-serif font-normal">Human.</span>
 </h1>
-<p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 mb-10 sm:mb-12 leading-relaxed">
+<p class="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed">
                     Audena powers human-like voice conversations at scale. Reach thousands of customers simultaneously without sacrificing the personal touch.
                 </p>
-<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
 <a class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all inline-block text-center" href="/book-demo">Start Free Trial</a>
 <a class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-white/10 transition-all flex items-center justify-center gap-2" href="/book-demo">
 <span class="material-symbols-outlined">play_circle</span>
                         Hear Demo
                     </a>
-</div>
-</div>
-<div class="hero-orb-panel order-1 lg:order-2" aria-hidden="true">
-<div class="hero-orb-glow"></div>
-<div class="hero-orb-shell">
-<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<radialGradient id="orb-core" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(200 200) rotate(90) scale(180)">
-<stop stop-color="#070B1E"/>
-<stop offset="0.48" stop-color="#0F1638"/>
-<stop offset="0.72" stop-color="#17204C" stop-opacity="0.72"/>
-<stop offset="1" stop-color="#17204C" stop-opacity="0"/>
-</radialGradient>
-<filter id="orb-blur" x="0" y="0" width="400" height="400" filterUnits="userSpaceOnUse">
-<feGaussianBlur stdDeviation="6"/>
-</filter>
-</defs>
-<circle class="hero-orb-core-pulse" cx="200" cy="200" r="128" fill="url(#orb-core)"/>
-<g class="hero-orb-ring">
-<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200" dur="11s" repeatCount="indefinite"/>
-<circle cx="200" cy="200" r="154" stroke="#FFFFFF" stroke-opacity="0.88" stroke-width="3"/>
-<ellipse cx="200" cy="200" rx="138" ry="70" stroke="#64B5F6" stroke-opacity="0.92" stroke-width="2.5"/>
-<ellipse cx="200" cy="200" rx="96" ry="152" stroke="#EC4899" stroke-opacity="0.72" stroke-width="2"/>
-</g>
-<g class="hero-orb-ring">
-<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="360 200 200" to="0 200 200" dur="8s" repeatCount="indefinite"/>
-<path d="M86 166C122 107 179 79 238 88C289 96 326 131 334 186C341 233 321 284 272 309C220 336 146 328 104 281C70 243 65 201 86 166Z" stroke="#A78BFA" stroke-opacity="0.9" stroke-width="3"/>
-<path d="M95 218C119 149 187 117 250 128C306 138 334 184 320 241C308 295 255 327 194 319C132 311 81 260 95 218Z" stroke="#60A5FA" stroke-opacity="0.82" stroke-width="2.5"/>
-</g>
-<g class="hero-orb-energy hero-orb-pulse" filter="url(#orb-blur)">
-<path d="M116 104C157 81 237 79 288 111" stroke="#67E8F9" stroke-width="10" stroke-linecap="round"/>
-<path d="M304 131C332 166 340 238 314 286" stroke="#F472B6" stroke-width="11" stroke-linecap="round"/>
-<path d="M103 280C137 317 216 331 274 311" stroke="#C084FC" stroke-width="10" stroke-linecap="round"/>
-<path d="M82 136C61 181 64 248 93 289" stroke="#60A5FA" stroke-width="9" stroke-linecap="round"/>
-</g>
-<g class="hero-orb-spark">
-<circle cx="108" cy="130" r="7" fill="#67E8F9"/>
-<circle cx="295" cy="117" r="8" fill="#F472B6"/>
-<circle cx="302" cy="286" r="7" fill="#C084FC"/>
-<circle cx="126" cy="299" r="6" fill="#93C5FD"/>
-</g>
-<g class="hero-orb-node">
-<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200" dur="6s" repeatCount="indefinite"/>
-<circle cx="200" cy="46" r="10" fill="#F472B6"/>
-</g>
-<g class="hero-orb-node">
-<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="360 200 200" to="0 200 200" dur="7s" repeatCount="indefinite"/>
-<circle cx="340" cy="200" r="8" fill="#67E8F9"/>
-</g>
-<g class="hero-orb-node">
-<animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 200 200;24 200 200;0 200 200" dur="4.5s" repeatCount="indefinite"/>
-<circle cx="142" cy="326" r="9" fill="#C084FC"/>
-</g>
-</svg>
-</div>
-</div>
-</div>
-</section>
-<section class="px-4 sm:px-6 pb-10 pt-4" id="hero-preview">
-<div class="relative max-w-6xl mx-auto">
-<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-[2rem] blur-2xl opacity-50 -z-10"></div>
-<div class="backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 rounded-2xl border border-gray-200/80 dark:border-white/10 shadow-2xl overflow-hidden">
-<div class="h-12 border-b border-gray-200 dark:border-white/10 flex items-center px-4 justify-between bg-gray-50/80 dark:bg-black/20">
-<div class="flex gap-1.5">
-<div class="w-3 h-3 rounded-full bg-red-400"></div>
-<div class="w-3 h-3 rounded-full bg-amber-400"></div>
-<div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-</div>
-<div class="flex items-center gap-4 text-[10px] font-medium text-gray-400 tracking-wider">
-<span class="material-symbols-outlined text-sm">shield</span> SECURE CONNECTION
-</div>
-<div class="w-12"></div>
-</div>
-<div class="p-4 sm:p-6 bg-white dark:bg-gray-900">
-<div class="flex items-center justify-between mb-6">
-<h3 class="font-display font-bold text-xl text-gray-900 dark:text-white">Audena</h3>
-<div class="flex items-center gap-3 text-xs text-gray-500">
-<span>ADD</span>
-<span>CAFS</span>
-<span class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-400">i</span>
-</div>
-</div>
-<div class="grid gap-6 md:grid-cols-2 md:gap-8 mb-8">
-<div class="space-y-3">
-<div class="flex justify-between text-sm">
-<span class="text-gray-600 dark:text-gray-400">Active Calls</span>
-<span class="font-semibold text-gray-900 dark:text-white">1.23M</span>
-</div>
-<div class="flex justify-between text-sm">
-<span class="text-gray-600 dark:text-gray-400">Total Calls</span>
-<span class="font-semibold text-gray-900 dark:text-white">1.5M</span>
-</div>
-<div class="flex justify-between text-sm">
-<span class="text-gray-600 dark:text-gray-400">Call Duration</span>
-<span class="font-semibold text-gray-900 dark:text-white">572h</span>
-</div>
-<div class="flex justify-between text-sm">
-<span class="text-gray-600 dark:text-gray-400">Success Rate</span>
-<span class="font-semibold text-gray-900 dark:text-white">94.2%</span>
-</div>
-</div>
-<div>
-<p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Addition Stats</p>
-<div class="space-y-2">
-<div class="flex items-center justify-between py-2 px-3 rounded-lg bg-gray-100 dark:bg-gray-800/50">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-primary"></span>
-<span class="text-sm text-gray-700 dark:text-gray-300">Success Rate</span>
-</div>
-<span class="text-sm font-semibold text-gray-900 dark:text-white">94.2%</span>
-</div>
-<div class="flex items-center justify-between py-2 px-3 rounded-lg">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-gray-300"></span>
-<span class="text-sm text-gray-700 dark:text-gray-300">Latency</span>
-</div>
-<span class="text-sm font-semibold text-gray-900 dark:text-white">185ms</span>
-</div>
-<div class="flex items-center justify-between py-2 px-3 rounded-lg">
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-gray-300"></span>
-<span class="text-sm text-gray-700 dark:text-gray-300">Modulate</span>
-</div>
-<span class="text-sm font-semibold text-gray-900 dark:text-white">CDO</span>
-</div>
-</div>
-</div>
-</div>
-<div class="flex justify-between items-center mb-4">
-<span class="text-xs font-semibold text-gray-500 uppercase">VpS%</span>
-<span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Asset Items <span class="text-gray-900 dark:text-white font-bold">16.00K</span></span>
-</div>
-<div class="flex items-end gap-2 h-32">
-<div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-t" style="height: 45%"></div>
-<div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-t" style="height: 65%"></div>
-<div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-t" style="height: 35%"></div>
-<div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-t" style="height: 80%"></div>
-<div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-t" style="height: 55%"></div>
-<div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-t" style="height: 70%"></div>
-<div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-t" style="height: 40%"></div>
-<div class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-t" style="height: 90%"></div>
-</div>
-<div class="flex justify-between mt-2 text-[10px] text-gray-500 font-medium">
-<span>Alerts</span>
-<span>Marks</span>
-<span>Resevation</span>
-<span>Down-time</span>
-<span>Glenside</span>
-<span>Heat Sink</span>
-<span>Auto</span>
-<span>Umap</span>
-</div>
 </div>
 </div>
 </div>
@@ -432,7 +621,21 @@
 </div>
 <div class="relative group">
 <div class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] -rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
-<img alt="Advanced Data Visualization Interface" class="relative rounded-[2rem] border border-gray-200 dark:border-white/10 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVCJ8XHeO50-zAFBze2MwqrL39Gwre5j0uu84E55FEzXhpg7Tu9OAG1AqkY28hfcmbp9vqjfsSRlPntX72wSEkad_vtfEZlHarmCEt2gIXTuxWKRZPEcj-YD5elgY-q1ugvSyH7eZodcIqfX3PMZ4FGJfVTadqb4PnAFzTnz0vKNcXWPxJnaVLDrArynfMFwKMrItvmJs0yIR2lfwS6P_ADndv1z1CwMnX1bVnXqIy29QwX2WDgGzGL0mQjqXUXvJAiYNfAN1RPFw"/>
+<div class="relative rounded-[2rem] border border-slate-600/40 shadow-2xl overflow-hidden bg-slate-700 p-6 sm:p-8 min-h-[280px] sm:min-h-[320px] flex flex-col">
+<div class="flex items-end justify-between gap-2 sm:gap-3 h-48 sm:h-56">
+<div class="chart-bar flex-1 min-w-0 rounded-t transition-all duration-700 ease-out" style="--h:0.45; --delay:0.1s; background:linear-gradient(180deg,rgba(74,111,165,0.95),rgba(74,111,165,0.75));" data-animate></div>
+<div class="chart-bar flex-1 min-w-0 rounded-t transition-all duration-700 ease-out" style="--h:0.72; --delay:0.2s; background:linear-gradient(180deg,rgba(100,116,139,0.9),rgba(100,116,139,0.7));" data-animate></div>
+<div class="chart-bar flex-1 min-w-0 rounded-t transition-all duration-700 ease-out" style="--h:0.55; --delay:0.3s; background:linear-gradient(180deg,rgba(74,111,165,0.92),rgba(74,111,165,0.72));" data-animate></div>
+<div class="chart-bar flex-1 min-w-0 rounded-t transition-all duration-700 ease-out" style="--h:0.88; --delay:0.4s; background:linear-gradient(180deg,rgba(74,111,165,0.98),rgba(74,111,165,0.8));" data-animate></div>
+<div class="chart-bar flex-1 min-w-0 rounded-t transition-all duration-700 ease-out" style="--h:0.62; --delay:0.5s; background:linear-gradient(180deg,rgba(100,116,139,0.88),rgba(100,116,139,0.68));" data-animate></div>
+<div class="chart-bar flex-1 min-w-0 rounded-t transition-all duration-700 ease-out" style="--h:0.78; --delay:0.6s; background:linear-gradient(180deg,rgba(74,111,165,0.94),rgba(74,111,165,0.74));" data-animate></div>
+<div class="chart-bar flex-1 min-w-0 rounded-t transition-all duration-700 ease-out" style="--h:0.52; --delay:0.7s; background:linear-gradient(180deg,rgba(100,116,139,0.86),rgba(100,116,139,0.66));" data-animate></div>
+<div class="chart-bar flex-1 min-w-0 rounded-t transition-all duration-700 ease-out" style="--h:0.92; --delay:0.8s; background:linear-gradient(180deg,rgba(74,111,165,1),rgba(74,111,165,0.82));" data-animate></div>
+</div>
+<div class="flex justify-between gap-2 sm:gap-3 mt-4 text-[10px] sm:text-xs font-medium text-slate-300">
+<span class="flex-1 min-w-0 text-center">Mon</span><span class="flex-1 min-w-0 text-center">Tue</span><span class="flex-1 min-w-0 text-center">Wed</span><span class="flex-1 min-w-0 text-center">Thu</span><span class="flex-1 min-w-0 text-center">Fri</span><span class="flex-1 min-w-0 text-center">Sat</span><span class="flex-1 min-w-0 text-center">Sun</span><span class="flex-1 min-w-0 text-center">Avg</span>
+</div>
+</div>
 </div>
 </div>
 </div>
